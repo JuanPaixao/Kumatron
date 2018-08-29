@@ -22,7 +22,7 @@ public class CameraPosition : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp(_player.position.x, _xMin, _xMax), Mathf.Clamp(_player.position.y, _yMin, _yMax), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(_player.position.x, _xMin, _xMax), Mathf.Clamp(_player.position.y, _yMin, _yMax)-1f, transform.position.z);
 
     }
 

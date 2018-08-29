@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Tilemap
   - Chicken
+  - RayCheck
+  - Animal
+  - Ray
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - 
   - Tilemap
   - Animals
-  - 
+  - Animal_RayCast
   - 
   - 
   - 
