@@ -11,13 +11,16 @@ public class ChickenAnimationControl : MonoBehaviour
         chickenAnimator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void ChickenCanMove(bool moving)
     {
-        chickenAnimator.SetBool("Walking", moving);
+        chickenAnimator.SetBool("isWalking", moving);
+    }
+    public void ChickenIsFalling(bool falling)
+    {
+        chickenAnimator.SetBool("isFalling", falling);
+    }
+    public void ChickenIsAbducting(bool abducting)
+    {
+        chickenAnimator.SetBool("isAbducting", abducting);
     }
 }
