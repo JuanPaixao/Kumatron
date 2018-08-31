@@ -18,15 +18,12 @@ public class AnimalScript : MonoBehaviour
     [SerializeField]
     private GameObject playerRay;
     [SerializeField]
-    private SpriteRenderer _spriteRenderer;
-    [SerializeField]
     private RaycastHit2D _hit, _hitUp, _hitDown, _hitCheckHeight;
 
     // Use this for initialization
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -49,25 +46,20 @@ public class AnimalScript : MonoBehaviour
         while (this.gameObject != null)
         {
             _animalSpeed = 10f;
-            _spriteRenderer.color -= new Color(0f, 0f, 0f, 0.025f);
             yield return new WaitForSeconds(1);
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
     private void CheckJumpCollision()
-    {   //turn
+    {
+        //turn
         _hit = Physics2D.Raycast(hitDetection.position, Vector2.zero, _animalSpeed, ~_layerMask);
-        Debug.DrawRay(hitDetection.transform.position, Vector2.right, Color.yellow, Mathf.Infinity);
         //check if theres free space to jump
         _hitUp = Physics2D.Raycast(hitDetectionUpLevel.position, Vector2.zero, _animalSpeed, ~_layerMask);
-        Debug.DrawRay(hitDetectionUpLevel.transform.position, Vector2.right, Color.yellow, Mathf.Infinity);
         //check if i conclude my jump
         _hitCheckHeight = Physics2D.Raycast(hitHeightCheckLevel.position, Vector2.zero, _animalSpeed, ~_layerMask);
-        Debug.DrawRay(hitHeightCheckLevel.transform.position, Vector2.zero, Color.yellow, Mathf.Infinity);
         //down
         _hitDown = Physics2D.Raycast(hitDetectionDownLevel.position, Vector2.zero, _animalSpeed, ~_layerMask);
-        Debug.DrawRay(hitDetectionDownLevel.transform.position, Vector2.zero, Color.yellow, Mathf.Infinity);
-
 
 
         if (_hitCheckHeight.collider == true && _hitUp.collider != true && _hitCheckHeight.collider.tag != this.gameObject.tag)

@@ -8,15 +8,18 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _playerSpeed;
     private Vector3 _targetPos;
-    [SerializeField]
-    private bool _withAnimal = false;
+    public bool withAnimal = false;
+    public bool rayFinished = true;
     [SerializeField]
     private GameObject _kumatronRay;
     private float _kumatronRayRange = 4.04f;
     [SerializeField]
+    private ReleaseAnimal _releaseAnimal;
+    [SerializeField]
     private GameObject _animalPos;
     [SerializeField]
-    private string _animalTarget, _animalWithme;
+    private string _animalTarget;
+    public string animalWithMe, playerDirection;
     private RaycastHit2D _hit;
     public bool playerCanMove = true;
     void Start()
@@ -27,6 +30,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+
+        if (Input.GetKeyDown(KeyCode.Space) && rayFinished == true)
+        {
+            _releaseAnimal.ReleasePlayerAnimal();
+        }
     }
 
     private void PlayerMovement()
@@ -35,6 +43,15 @@ public class Player : MonoBehaviour
         {
             //check if has target
             CheckObject();
+
+            if (_targetPos.x > this.transform.position.x)
+            {
+                playerDirection = "right";
+            }
+            else if (_targetPos.x < this.transform.position.x)
+            {
+                playerDirection = "left";
+            }
         }
         transform.position = Vector2.MoveTowards(transform.position, _targetPos, _playerSpeed * Time.deltaTime);
 
@@ -69,8 +86,8 @@ public class Player : MonoBehaviour
         {
             StopCoroutine(Lock());
             _targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            _animalPos = null;
             _targetPos.z = this.gameObject.transform.position.z;
+            _animalPos = null;
             _animalTarget = null;
             Debug.Log("nothing");
         }
@@ -78,12 +95,13 @@ public class Player : MonoBehaviour
 
     private void TurnRayOn()
     {
-        if (this.transform.position.y == _targetPos.y && _withAnimal == false)
+        if (this.transform.position.y == _targetPos.y && withAnimal == false && rayFinished == true)
         {
             _kumatronRay.SetActive(true);
-            _withAnimal = true;
-            _animalWithme = _animalTarget;
+            withAnimal = true;
+            animalWithMe = _animalTarget;
             playerCanMove = false;
+            rayFinished = false;
         }
     }
     private IEnumerator Lock()

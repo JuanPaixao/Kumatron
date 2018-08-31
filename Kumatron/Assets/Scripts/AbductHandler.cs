@@ -10,5 +10,6 @@ public class AbductHandler : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         _player.playerCanMove = true;
+        _player.rayFinished = true;
     }
 }
