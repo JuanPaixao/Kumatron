@@ -9,6 +9,7 @@ public class ChickenAnimationControl : MonoBehaviour
     void Start()
     {
         chickenAnimator = GetComponent<Animator>();
+        this.gameObject.name = "Chicken";
     }
 
     public void ChickenCanMove(bool moving)

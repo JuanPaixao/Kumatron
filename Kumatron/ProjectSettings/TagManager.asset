@@ -9,6 +9,7 @@ TagManager:
   - RayCheck
   - Animal
   - Ray
+  - Egg
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Tilemap
   - Animals
   - Animal_RayCast
-  - 
+  - Player
   - 
   - 
   - 

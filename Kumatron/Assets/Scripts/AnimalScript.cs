@@ -6,7 +6,7 @@ public class AnimalScript : MonoBehaviour
 {
 
     [SerializeField]
-    private float _animalSpeed, _forceJump, _auxAnimalSpeed, _movingTime, _toggleMove;
+    private float _animalSpeed, _forceJump, _auxAnimalSpeed, _movingTime, _toggleMove, randomMoveTime;
     private Rigidbody2D _rb;
     [SerializeField]
     private bool _movingRight = false;
@@ -25,10 +25,11 @@ public class AnimalScript : MonoBehaviour
 
     void Start()
     {
+        randomMoveTime = Random.RandomRange(3, 10);
         _rb = GetComponent<Rigidbody2D>();
         _chickenAnimation = GetComponent<ChickenAnimationControl>();
         _auxAnimalSpeed = _animalSpeed;
-        _toggleMove = 6.6f;
+        _toggleMove = randomMoveTime;
 
     }
     void FixedUpdate()
@@ -54,13 +55,20 @@ public class AnimalScript : MonoBehaviour
         {
             if (_hitDown == true)
             {
-                _chickenAnimation.ChickenCanMove(true);
+                //chicken
+                if (this.gameObject.name == "Chicken" || this.gameObject.name == "Chicken_Collision")
+                {
+                    _chickenAnimation.ChickenCanMove(true);
+                }
             }
             _rb.velocity = new Vector2(-_animalSpeed * Time.deltaTime, 0);
         }
         else
         {
-            _chickenAnimation.ChickenCanMove(false);
+            if (this.gameObject.name == "Chicken" || this.gameObject.name == "Chicken_Collision")
+            {
+                _chickenAnimation.ChickenCanMove(false);
+            }           
         }
     }
 
@@ -102,8 +110,8 @@ public class AnimalScript : MonoBehaviour
             if (_movingRight == true)
             {
                 _isWalking = !_isWalking;
-                _rb.AddForce(Vector2.up * 50, ForceMode2D.Impulse);
-                _rb.AddForce(Vector2.right * 20, ForceMode2D.Impulse);
+                _rb.AddForce(Vector2.up * 60, ForceMode2D.Impulse);
+                _rb.AddForce(Vector2.right * 30, ForceMode2D.Impulse);
                 _movingRight = false;
                 transform.eulerAngles = new Vector2(0, 0);
                 _animalSpeed = -_animalSpeed;
@@ -112,8 +120,8 @@ public class AnimalScript : MonoBehaviour
             else
             {
                 _isWalking = !_isWalking;
-                _rb.AddForce(Vector2.up * 50, ForceMode2D.Impulse);
-                _rb.AddForce(Vector2.left * 20, ForceMode2D.Impulse);
+                _rb.AddForce(Vector2.up * 60, ForceMode2D.Impulse);
+                _rb.AddForce(Vector2.left * -30, ForceMode2D.Impulse);
                 _movingRight = true;
                 transform.eulerAngles = new Vector2(0, 180);
                 _animalSpeed = -_animalSpeed;
@@ -122,13 +130,16 @@ public class AnimalScript : MonoBehaviour
     }
     private void CheckGrounded()
     {
-        if (_hitDown == false)
+        if (this.gameObject.name == "Chicken" || this.gameObject.name == "Chicken_Collision")
         {
-            _chickenAnimation.ChickenIsFalling(true);
-        }
-        else
-        {
-            _chickenAnimation.ChickenIsFalling(false);
+            if (_hitDown == false)
+            {
+                _chickenAnimation.ChickenIsFalling(true);
+            }
+            else
+            {
+                _chickenAnimation.ChickenIsFalling(false);
+            }
         }
     }
     private void checkTime()
@@ -141,12 +152,16 @@ public class AnimalScript : MonoBehaviour
     }
     private IEnumerator AnimalAbducted()
     {
-        while (this.gameObject != null)
+        while (1 < 2) //placeholder to gameover
         {
             _isWalking = false;
-            _animalSpeed = 10f;
+            _animalSpeed = 5f;
             //chicken
-            _chickenAnimation.ChickenIsAbducting(true);
+            if (this.gameObject.name == "Chicken" || this.gameObject.name == "Chicken_Collision")
+            {
+                _chickenAnimation.ChickenIsAbducting(true);
+            }
+
             yield return new WaitForSeconds(1);
             Destroy(this.gameObject);
         }

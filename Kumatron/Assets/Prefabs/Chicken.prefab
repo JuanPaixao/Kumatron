@@ -108,7 +108,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4053350812034994
 Transform:
   m_ObjectHideFlags: 1
@@ -181,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1500740234684890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.114, y: 1.71, z: 0}
+  m_LocalPosition: {x: 3.72, y: 2.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4119676891074092}
@@ -324,7 +324,7 @@ MonoBehaviour:
   hitDetectionDownLevel: {fileID: 4723985706595412}
   hitHeightCheckLevel: {fileID: 4053350812034994}
   playerRay: {fileID: 0}
-  _isWalking: 1
+  _isWalking: 0
 --- !u!212 &212068022648492268
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,6 +8,8 @@ public class ReleaseAnimal : MonoBehaviour
     private Player _player;
     [SerializeField]
     private GameObject[] animals;
+    [SerializeField]
+    private GameObject _egg;
     public void ReleasePlayerAnimal()
     {
         if (_player.animalWithMe != "")
@@ -18,6 +20,7 @@ public class ReleaseAnimal : MonoBehaviour
                 Debug.Log("Throwing the " + _player.animalWithMe);
                 _player.animalWithMe = null;
                 _player.withAnimal = false;
+                _player.animalPowerUp[0].SetActive(false);
                 StartCoroutine(ControlRayRoutine());
             }
         }
@@ -28,5 +31,16 @@ public class ReleaseAnimal : MonoBehaviour
         _player.rayFinished = false;
         yield return new WaitForSeconds(1.5f);
         _player.rayFinished = true;
+    }
+
+    public void Attack()
+    {
+        if (_player.withAnimal == true)
+        {
+            if (_player.animalWithMe == "Chicken" || _player.animalWithMe == "Chicken_Collision")
+            {
+                Instantiate(_egg, this.transform.position, Quaternion.identity);
+            }
+        }
     }
 }

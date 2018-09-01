@@ -22,6 +22,12 @@ public class Player : MonoBehaviour
     public string animalWithMe, playerDirection;
     private RaycastHit2D _hit;
     public bool playerCanMove = true;
+    public GameObject[] animalPowerUp;
+    [SerializeField]
+    private PlayerAnimations[] playerAnimations;
+    private float _shootFixedCooldown = 1.00f;
+    private float _eggCooldown = 0f;
+
     void Start()
     {
         _targetPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
@@ -30,11 +36,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        PlayerAttack();
 
-        if (Input.GetKeyDown(KeyCode.Space) && rayFinished == true)
-        {
-            _releaseAnimal.ReleasePlayerAnimal();
-        }
     }
 
     private void PlayerMovement()
@@ -54,8 +57,6 @@ public class Player : MonoBehaviour
             }
         }
         transform.position = Vector2.MoveTowards(transform.position, _targetPos, _playerSpeed * Time.deltaTime);
-
-
     }
 
     private void OnCollisionStay2D(Collision2D other)
@@ -79,7 +80,6 @@ public class Player : MonoBehaviour
                 _animalPos.transform.position = new Vector3(_animalPos.transform.position.x, _animalPos.transform.position.y, _animalPos.transform.position.z);
                 _targetPos = new Vector3(_animalPos.transform.position.x, _animalPos.transform.position.y + _kumatronRayRange, _animalPos.transform.position.z);
                 StartCoroutine(Lock());
-
             }
         }
         else if (_hit.collider == null)
@@ -102,7 +102,34 @@ public class Player : MonoBehaviour
             animalWithMe = _animalTarget;
             playerCanMove = false;
             rayFinished = false;
+
+            if (animalWithMe == "Chicken" || animalWithMe == "Chicken_Collision")
+            {
+                StartCoroutine(AnimalPowerUp(0));
+            }
         }
+    }
+
+    private void PlayerAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && rayFinished == true)
+        {
+            _releaseAnimal.ReleasePlayerAnimal();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > _eggCooldown)
+        {
+            _releaseAnimal.Attack();
+            _eggCooldown = _shootFixedCooldown + _eggCooldown;
+            if (animalWithMe == "Chicken" || animalWithMe == "Chicken_Collision")
+                playerAnimations[0].AttackAnimationPlay_Chicken();
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (animalWithMe == "Chicken" || animalWithMe == "Chicken_Collision")
+                playerAnimations[0].AttackAnimationStop_Chicken();
+        }
+
     }
     private IEnumerator Lock()
     {
@@ -113,8 +140,13 @@ public class Player : MonoBehaviour
             _animalPos.transform.position = new Vector3(_animalPos.transform.position.x, _animalPos.transform.position.y, _animalPos.transform.position.z);
             _targetPos = new Vector3(_animalPos.transform.position.x, _animalPos.transform.position.y + _kumatronRayRange, _animalPos.transform.position.z);
             TurnRayOn();
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.0075f);
         }
+    }
+    private IEnumerator AnimalPowerUp(int animal)
+    {
+        yield return new WaitForSeconds(1);
+        animalPowerUp[animal].SetActive(true);
     }
 }
 
