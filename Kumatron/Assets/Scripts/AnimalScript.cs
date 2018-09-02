@@ -20,17 +20,30 @@ public class AnimalScript : MonoBehaviour
     [SerializeField]
     private RaycastHit2D _hit, _hitUp, _hitDown, _hitCheckHeight;
     private ChickenAnimationControl _chickenAnimation;
-    private BullAnimationControl _bullnAnimation;
+    private BullAnimationControl _bullAnimation;
+    private CowAnimationControl _cowAnimation;
 
     [SerializeField]
     private bool _isWalking;
 
     void Start()
     {
-        randomMoveTime = Random.Range(3, 10);
+        if (this.gameObject.name == "Chicken")
+        {
+            randomMoveTime = Random.Range(3.32f, 10);
+        }
+        else if (this.gameObject.name == "Bull")
+        {
+            randomMoveTime = Random.Range(6.5f, 14);
+        }
+        else if (this.gameObject.name == "Cow")
+        {
+            randomMoveTime = Random.Range(4, 11);
+        }
         _rb = GetComponent<Rigidbody2D>();
         _chickenAnimation = GetComponent<ChickenAnimationControl>();
-        _bullnAnimation = GetComponent<BullAnimationControl>();
+        _bullAnimation = GetComponent<BullAnimationControl>();
+        _cowAnimation = GetComponent<CowAnimationControl>();
         _auxAnimalSpeed = _animalSpeed;
         _toggleMove = randomMoveTime;
 
@@ -50,8 +63,6 @@ public class AnimalScript : MonoBehaviour
             StartCoroutine(AnimalAbducted());
         }
     }
-
-
     private void Walk()
     {
         if (_isWalking == true)
@@ -66,7 +77,12 @@ public class AnimalScript : MonoBehaviour
                 //bull
                 else if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
                 {
-                    _bullnAnimation.BullCanMove(true);
+                    _bullAnimation.BullCanMove(true);
+                }
+                //cow
+                else if (this.gameObject.name == "Cow" || this.gameObject.name == "Cow_Collision")
+                {
+                    _cowAnimation.CowCanMove(true);
                 }
             }
             _rb.velocity = new Vector2(-_animalSpeed * Time.deltaTime, 0);
@@ -79,7 +95,11 @@ public class AnimalScript : MonoBehaviour
             }
             else if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
             {
-                _bullnAnimation.BullCanMove(false);
+                _bullAnimation.BullCanMove(false);
+            }
+            else if (this.gameObject.name == "Cow" || this.gameObject.name == "Cow_Collision")
+            {
+                _cowAnimation.CowCanMove(false);
             }
         }
     }
@@ -99,44 +119,53 @@ public class AnimalScript : MonoBehaviour
         if (_hitCheckHeight.collider == true && _hitUp.collider != true && _hitCheckHeight.collider.tag != this.gameObject.tag)
         {
             Debug.Log("Jump!");
+            if (this.gameObject.name == "Chicken")
+            {   Debug.Log(this.gameObject.name);
+                _chickenAnimation.ChickenIsFalling(true);
+            }
             _rb.AddForce(Vector2.up * _forceJump);
         }
         else if (_hit.collider == true)
         {
-            if (_movingRight == true)
+            if (_isWalking == true)
             {
-                _movingRight = false;
-                transform.eulerAngles = new Vector2(0, 0);
-                _animalSpeed = -_animalSpeed;
-            }
-            else
-            {
-                _movingRight = true;
-                transform.eulerAngles = new Vector2(0, 180);
-                _animalSpeed = -_animalSpeed;
+                if (_movingRight == true)
+                {
+                    _movingRight = false;
+                    transform.eulerAngles = new Vector2(0, 0);
+                    _animalSpeed = -_animalSpeed;
+                }
+                else
+                {
+                    _movingRight = true;
+                    transform.eulerAngles = new Vector2(0, 180);
+                    _animalSpeed = -_animalSpeed;
+                }
             }
         }
         else if (_hitDown.collider == true && _hitDown.collider.tag == this.gameObject.tag)
         {
-
-            if (_movingRight == true)
+            if (_isWalking == true)
             {
-                _isWalking = !_isWalking;
-                _rb.AddForce(Vector2.up * 70, ForceMode2D.Impulse);
-                _rb.AddForce(Vector2.right * 30, ForceMode2D.Impulse);
-                _movingRight = false;
-                transform.eulerAngles = new Vector2(0, 0);
-                _animalSpeed = -_animalSpeed;
+                if (_movingRight == true)
+                {
+                    _isWalking = !_isWalking;
+                    _rb.AddForce(Vector2.up * 20, ForceMode2D.Impulse);
+                    _rb.AddForce(Vector2.right * 20, ForceMode2D.Impulse);
+                    _movingRight = false;
+                    transform.eulerAngles = new Vector2(0, 0);
+                    _animalSpeed = -_animalSpeed;
 
-            }
-            else
-            {
-                _isWalking = !_isWalking;
-                _rb.AddForce(Vector2.up * 70, ForceMode2D.Impulse);
-                _rb.AddForce(Vector2.left * -30, ForceMode2D.Impulse);
-                _movingRight = true;
-                transform.eulerAngles = new Vector2(0, 180);
-                _animalSpeed = -_animalSpeed;
+                }
+                else
+                {
+                    _isWalking = !_isWalking;
+                    _rb.AddForce(Vector2.up * 20, ForceMode2D.Impulse);
+                    _rb.AddForce(Vector2.left * -20, ForceMode2D.Impulse);
+                    _movingRight = true;
+                    transform.eulerAngles = new Vector2(0, 180);
+                    _animalSpeed = -_animalSpeed;
+                }
             }
         }
     }
@@ -157,11 +186,22 @@ public class AnimalScript : MonoBehaviour
         {
             if (_hitDown == false)
             {
-                _bullnAnimation.BullIsFalling(true);
+                _bullAnimation.BullIsFalling(true);
             }
             else
             {
-                _bullnAnimation.BullIsFalling(false);
+                _bullAnimation.BullIsFalling(false);
+            }
+        }
+        else if (this.gameObject.name == "Cow" || this.gameObject.name == "Cow_Collision")
+        {
+            if (_hitDown == false)
+            {
+                _cowAnimation.CowIsFalling(true);
+            }
+            else
+            {
+                _cowAnimation.CowIsFalling(false);
             }
         }
     }
@@ -184,9 +224,13 @@ public class AnimalScript : MonoBehaviour
             {
                 _chickenAnimation.ChickenIsAbducting(true);
             }
-            if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
+            else if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
             {
-                _bullnAnimation.BullIsAbducting(true);
+                _bullAnimation.BullIsAbducting(true);
+            }
+            else if (this.gameObject.name == "Cow" || this.gameObject.name == "Cow_Collision")
+            {
+                _cowAnimation.CowIsAbducting(true);
             }
 
             yield return new WaitForSeconds(1);

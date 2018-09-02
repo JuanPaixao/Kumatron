@@ -27,10 +27,12 @@ public class Player : MonoBehaviour
     private PlayerAnimations[] playerAnimations;
     private float _shootFixedCooldown = 1.00f;
     private float _eggCooldown = 0f;
+    private Rigidbody2D _rb;
 
     void Start()
     {
         _targetPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        _rb = GetComponent<Rigidbody2D>();
 
     }
     void Update()
@@ -65,6 +67,8 @@ public class Player : MonoBehaviour
         {
             _targetPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         }
+        GameObject otherObject = other.gameObject;
+        _rb.velocity = new Vector2(0f, 0f);
     }
 
     private void CheckObject()
@@ -73,7 +77,7 @@ public class Player : MonoBehaviour
         _hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         if (_hit.collider != null)
         {
-            if (_hit.collider.CompareTag("Animal"))
+            if (_hit.collider.CompareTag("Animal") && withAnimal == false)
             {
                 _animalPos = _hit.collider.gameObject;
                 _animalTarget = _animalPos.gameObject.name;
@@ -111,6 +115,10 @@ public class Player : MonoBehaviour
             {
                 StartCoroutine(AnimalPowerUp(1));
             }
+            if (animalWithMe == "Cow" || animalWithMe == "Cow_Collision")
+            {
+                StartCoroutine(AnimalPowerUp(2));
+            }
         }
     }
 
@@ -137,7 +145,7 @@ public class Player : MonoBehaviour
     }
     private IEnumerator Lock()
     {
-        while (_hit.collider != null && _hit.collider.CompareTag("Animal"))
+        while (_hit.collider != null && _hit.collider.CompareTag("Animal") && withAnimal == false)
         {
             _animalPos = _hit.collider.gameObject;
             _animalTarget = _animalPos.gameObject.name;
