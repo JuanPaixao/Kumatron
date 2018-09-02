@@ -107,6 +107,10 @@ public class Player : MonoBehaviour
             {
                 StartCoroutine(AnimalPowerUp(0));
             }
+            if (animalWithMe == "Bull" || animalWithMe == "Bull_Collision")
+            {
+                StartCoroutine(AnimalPowerUp(1));
+            }
         }
     }
 

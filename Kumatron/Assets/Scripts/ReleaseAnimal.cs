@@ -23,6 +23,15 @@ public class ReleaseAnimal : MonoBehaviour
                 _player.animalPowerUp[0].SetActive(false);
                 StartCoroutine(ControlRayRoutine());
             }
+            else if (_player.animalWithMe == "Bull" || _player.animalWithMe == "Bull_Collision")
+            {
+                Instantiate(animals[1], this.transform.position, Quaternion.identity);
+                Debug.Log("Throwing the " + _player.animalWithMe);
+                _player.animalWithMe = null;
+                _player.withAnimal = false;
+                _player.animalPowerUp[1].SetActive(false);
+                StartCoroutine(ControlRayRoutine());
+            }
         }
     }
 

@@ -20,14 +20,17 @@ public class AnimalScript : MonoBehaviour
     [SerializeField]
     private RaycastHit2D _hit, _hitUp, _hitDown, _hitCheckHeight;
     private ChickenAnimationControl _chickenAnimation;
+    private BullAnimationControl _bullnAnimation;
+
     [SerializeField]
     private bool _isWalking;
 
     void Start()
     {
-        randomMoveTime = Random.RandomRange(3, 10);
+        randomMoveTime = Random.Range(3, 10);
         _rb = GetComponent<Rigidbody2D>();
         _chickenAnimation = GetComponent<ChickenAnimationControl>();
+        _bullnAnimation = GetComponent<BullAnimationControl>();
         _auxAnimalSpeed = _animalSpeed;
         _toggleMove = randomMoveTime;
 
@@ -60,6 +63,11 @@ public class AnimalScript : MonoBehaviour
                 {
                     _chickenAnimation.ChickenCanMove(true);
                 }
+                //bull
+                else if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
+                {
+                    _bullnAnimation.BullCanMove(true);
+                }
             }
             _rb.velocity = new Vector2(-_animalSpeed * Time.deltaTime, 0);
         }
@@ -68,7 +76,11 @@ public class AnimalScript : MonoBehaviour
             if (this.gameObject.name == "Chicken" || this.gameObject.name == "Chicken_Collision")
             {
                 _chickenAnimation.ChickenCanMove(false);
-            }           
+            }
+            else if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
+            {
+                _bullnAnimation.BullCanMove(false);
+            }
         }
     }
 
@@ -110,7 +122,7 @@ public class AnimalScript : MonoBehaviour
             if (_movingRight == true)
             {
                 _isWalking = !_isWalking;
-                _rb.AddForce(Vector2.up * 60, ForceMode2D.Impulse);
+                _rb.AddForce(Vector2.up * 70, ForceMode2D.Impulse);
                 _rb.AddForce(Vector2.right * 30, ForceMode2D.Impulse);
                 _movingRight = false;
                 transform.eulerAngles = new Vector2(0, 0);
@@ -120,7 +132,7 @@ public class AnimalScript : MonoBehaviour
             else
             {
                 _isWalking = !_isWalking;
-                _rb.AddForce(Vector2.up * 60, ForceMode2D.Impulse);
+                _rb.AddForce(Vector2.up * 70, ForceMode2D.Impulse);
                 _rb.AddForce(Vector2.left * -30, ForceMode2D.Impulse);
                 _movingRight = true;
                 transform.eulerAngles = new Vector2(0, 180);
@@ -139,6 +151,17 @@ public class AnimalScript : MonoBehaviour
             else
             {
                 _chickenAnimation.ChickenIsFalling(false);
+            }
+        }
+        else if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
+        {
+            if (_hitDown == false)
+            {
+                _bullnAnimation.BullIsFalling(true);
+            }
+            else
+            {
+                _bullnAnimation.BullIsFalling(false);
             }
         }
     }
@@ -160,6 +183,10 @@ public class AnimalScript : MonoBehaviour
             if (this.gameObject.name == "Chicken" || this.gameObject.name == "Chicken_Collision")
             {
                 _chickenAnimation.ChickenIsAbducting(true);
+            }
+            if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
+            {
+                _bullnAnimation.BullIsAbducting(true);
             }
 
             yield return new WaitForSeconds(1);
