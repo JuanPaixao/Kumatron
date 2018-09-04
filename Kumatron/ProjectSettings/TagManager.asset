@@ -10,6 +10,7 @@ TagManager:
   - Animal
   - Ray
   - Egg
+  - UI
   layers:
   - Default
   - TransparentFX

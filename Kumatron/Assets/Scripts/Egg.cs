@@ -5,8 +5,6 @@ using UnityEngine.Tilemaps;
 
 public class Egg : MonoBehaviour
 {
-
-    private GameObject _otherObject;
     private Tilemap _tilemapGround;
     Vector3 hitPosition = Vector3.zero;
     [SerializeField]
@@ -23,7 +21,6 @@ public class Egg : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Tilemap"))
         {
-            _otherObject = GetComponent<GameObject>();
             if (other.gameObject.name == "Tilemap_Ground")
             {
                 foreach (ContactPoint2D hit in other.contacts)

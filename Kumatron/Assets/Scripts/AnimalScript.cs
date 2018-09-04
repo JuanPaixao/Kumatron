@@ -6,7 +6,7 @@ public class AnimalScript : MonoBehaviour
 {
 
     [SerializeField]
-    private float _animalSpeed, _forceJump, _auxAnimalSpeed, _movingTime, _toggleMove, randomMoveTime;
+    private float _animalSpeed, _forceJump, _movingTime, _toggleMove, randomMoveTime;
     private Rigidbody2D _rb;
     [SerializeField]
     private bool _movingRight = false;
@@ -15,8 +15,6 @@ public class AnimalScript : MonoBehaviour
     public Transform hitDetectionDownLevel;
     public Transform hitHeightCheckLevel;
     private LayerMask _layerMask = 1 << 10;
-    [SerializeField]
-    private GameObject playerRay;
     [SerializeField]
     private RaycastHit2D _hit, _hitUp, _hitDown, _hitCheckHeight;
     private ChickenAnimationControl _chickenAnimation;
@@ -44,7 +42,6 @@ public class AnimalScript : MonoBehaviour
         _chickenAnimation = GetComponent<ChickenAnimationControl>();
         _bullAnimation = GetComponent<BullAnimationControl>();
         _cowAnimation = GetComponent<CowAnimationControl>();
-        _auxAnimalSpeed = _animalSpeed;
         _toggleMove = randomMoveTime;
 
     }
@@ -57,7 +54,6 @@ public class AnimalScript : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        playerRay = other.gameObject.GetComponent<GameObject>();
         if (other.CompareTag("Ray"))
         {
             StartCoroutine(AnimalAbducted());
@@ -120,7 +116,8 @@ public class AnimalScript : MonoBehaviour
         {
             Debug.Log("Jump!");
             if (this.gameObject.name == "Chicken")
-            {   Debug.Log(this.gameObject.name);
+            {
+                Debug.Log(this.gameObject.name);
                 _chickenAnimation.ChickenIsFalling(true);
             }
             _rb.AddForce(Vector2.up * _forceJump);
