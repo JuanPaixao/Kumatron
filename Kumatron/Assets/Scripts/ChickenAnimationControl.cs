@@ -16,12 +16,13 @@ public class ChickenAnimationControl : MonoBehaviour
     {
         chickenAnimator.SetBool("isWalking", moving);
     }
-    public void ChickenIsFalling(bool falling)
-    {
-        chickenAnimator.SetBool("isFalling", falling);
-    }
+
     public void ChickenIsAbducting(bool abducting)
     {
         chickenAnimator.SetBool("isAbducting", abducting);
+    }
+    public void ChickenIsFalling(bool falling)
+    {
+        chickenAnimator.SetBool("isFalling", falling);
     }
 }

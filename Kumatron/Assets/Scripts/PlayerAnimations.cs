@@ -23,4 +23,23 @@ public class PlayerAnimations : MonoBehaviour
     {
         animalWithPlayer.SetBool("Shooting", false);
     }
+
+
+    public void StartIdleAnimation_Bull()
+    {
+        animalWithPlayer.SetBool("IdleAnimation", true);
+    }
+    public void AttackAnimationPlay_Bull()
+    {
+        animalWithPlayer.SetBool("isDashing", true);
+    }
+    public void AttackAnimationPlayLeft_Bull()
+    {
+        animalWithPlayer.SetBool("isDashingLeft", true);
+    }
+    public void AttackAnimationStop_Bull()
+    {
+        animalWithPlayer.SetBool("isDashing", false);
+        animalWithPlayer.SetBool("isDashingLeft", false);
+    }
 }

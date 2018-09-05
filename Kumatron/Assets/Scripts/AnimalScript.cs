@@ -114,10 +114,8 @@ public class AnimalScript : MonoBehaviour
 
         if (_hitCheckHeight.collider == true && _hitUp.collider != true && _hitCheckHeight.collider.tag != this.gameObject.tag)
         {
-            Debug.Log("Jump!");
             if (this.gameObject.name == "Chicken")
             {
-                Debug.Log(this.gameObject.name);
                 _chickenAnimation.ChickenIsFalling(true);
             }
             _rb.AddForce(Vector2.up * _forceJump);
@@ -168,7 +166,7 @@ public class AnimalScript : MonoBehaviour
     }
     private void CheckGrounded()
     {
-        if (this.gameObject.name == "Chicken" || this.gameObject.name == "Chicken_Collision")
+        if (this.gameObject.name == "Chicken")
         {
             if (_hitDown == false)
             {
@@ -179,7 +177,7 @@ public class AnimalScript : MonoBehaviour
                 _chickenAnimation.ChickenIsFalling(false);
             }
         }
-        else if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
+        else if (this.gameObject.name == "Bull")
         {
             if (_hitDown == false)
             {
@@ -190,7 +188,7 @@ public class AnimalScript : MonoBehaviour
                 _bullAnimation.BullIsFalling(false);
             }
         }
-        else if (this.gameObject.name == "Cow" || this.gameObject.name == "Cow_Collision")
+        else if (this.gameObject.name == "Cow")
         {
             if (_hitDown == false)
             {
@@ -217,15 +215,15 @@ public class AnimalScript : MonoBehaviour
             _isWalking = false;
             _animalSpeed = 5f;
             //chicken
-            if (this.gameObject.name == "Chicken" || this.gameObject.name == "Chicken_Collision")
+            if (this.gameObject.name == "Chicken")
             {
                 _chickenAnimation.ChickenIsAbducting(true);
             }
-            else if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
+            else if (this.gameObject.name == "Bull")
             {
                 _bullAnimation.BullIsAbducting(true);
             }
-            else if (this.gameObject.name == "Cow" || this.gameObject.name == "Cow_Collision")
+            else if (this.gameObject.name == "Cow")
             {
                 _cowAnimation.CowIsAbducting(true);
             }

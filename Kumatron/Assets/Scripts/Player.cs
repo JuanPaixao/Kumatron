@@ -19,46 +19,92 @@ public class Player : MonoBehaviour
     public GameObject[] animalPowerUp;
     [SerializeField]
     private PlayerAnimations[] playerAnimations;
-    private float _shootFixedCooldown = 1.00f;
-    private float _eggCooldown = 0f;
-    private Rigidbody2D _rb;
-    [SerializeField]
-    private float _dashSpeed;
-    private float _dashTime;
-    [SerializeField]
-    private float _startDashTime;
+    private float _cooldown = 0f;
+    private float _nextTime = 0.5f;
+    public Rigidbody2D rb;
+    public float dashSpeed;
     [SerializeField]
     private AbduptionRange abduptionRange;
+    [SerializeField]
+    private Animator _animator;
+    public bool isDashing;
+
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
-        _dashTime = _startDashTime;
-
+        rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
     void Update()
     {
         PlayerMovement();
         PlayerAttack();
-    }
-    void FixedUpdate()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
+
+        if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.RightArrow)))
         {
+            playerDirection = "right";
+        }
+        else if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.LeftArrow)))
+        {
+            playerDirection = "left";
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && withAnimal == true && animalWithMe == "Bull")
+        {
+            playerAnimations[1].AttackAnimationPlay_Bull();
+            if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.LeftArrow) || playerDirection == "left"))
+            {
+                _animator.SetBool("isDashingLeft", true);
+                Dash();
+            }
+            else if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.RightArrow) || playerDirection == "right"))
+                _animator.SetBool("isDashing", true);
             Dash();
         }
-        else if (Input.GetKeyUp(KeyCode.D))
+
+
+        if (isDashing == false)
         {
-            _rb.velocity = _rb.velocity = Vector2.zero;
+            rb.velocity = Vector2.zero;
+
         }
     }
+    private void PlayerAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && rayFinished == true)
+        {
+            _releaseAnimal.ReleasePlayerAnimal();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && Time.time > _cooldown)
+        {
+            _releaseAnimal.Attack();
+            _cooldown = Time.time + _nextTime;
+
+            if (animalWithMe == "Chicken")
+            {
+                playerAnimations[0].AttackAnimationPlay_Chicken();
+            }
+            else if (animalWithMe == "Bull")
+            {
+                playerAnimations[1].AttackAnimationPlay_Bull();
+            }
+        }
+
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
+            if (animalWithMe == "Chicken")
+                playerAnimations[0].AttackAnimationStop_Chicken();
+        }
+    }
+
     private void PlayerMovement()
     {
         if (playerCanMove == true)
         {
             float horizontalMovement = Input.GetAxis("Horizontal");
             float verticalmovement = Input.GetAxis("Vertical");
-            _rb.transform.Translate(new Vector2(horizontalMovement, verticalmovement) * _playerSpeed * Time.deltaTime);
+            rb.transform.Translate(new Vector2(horizontalMovement, verticalmovement) * _playerSpeed * Time.deltaTime, Space.World);
         }
     }
 
@@ -95,52 +141,53 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void PlayerAttack()
-    {
-        if (Input.GetKeyDown(KeyCode.R) && rayFinished == true)
-        {
-            _releaseAnimal.ReleasePlayerAnimal();
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && Time.time > _eggCooldown)
-        {
-            _releaseAnimal.Attack();
-            _eggCooldown = _shootFixedCooldown + _eggCooldown;
-            if (animalWithMe == "Chicken" || animalWithMe == "Chicken_Collision")
-                playerAnimations[0].AttackAnimationPlay_Chicken();
-        }
-        else if (Input.GetKeyUp(KeyCode.E))
-        {
-            if (animalWithMe == "Chicken" || animalWithMe == "Chicken_Collision")
-                playerAnimations[0].AttackAnimationStop_Chicken();
-        }
-
-    }
-    public void Dash()
-    {
-        if (_dashTime <= 0)
-        {
-            playerDirection = "";
-        }
-        else
-        {
-            _dashTime -= Time.deltaTime;
-
-            if (playerDirection == "right")
-            {
-
-            }
-            else if (playerDirection == "left")
-            {
-
-            }
-        }
-    }
 
     private IEnumerator AnimalPowerUp(int animal)
     {
         yield return new WaitForSeconds(1);
         animalPowerUp[animal].SetActive(true);
     }
-}
 
+    public void Dash()
+    {
+        if (animalWithMe == "Bull")
+        {
+            if (playerDirection == "right")
+            {
+                isDashing = true;
+                StartCoroutine(RightDashCoroutine());
+            }
+            else if (playerDirection == "left")
+            {
+                isDashing = true;
+                StartCoroutine(LeftDashCoroutine());
+            }
+        }
+    }
+
+
+    private IEnumerator RightDashCoroutine()
+    {
+        while (isDashing == true)
+        {
+            rb.velocity = new Vector2(dashSpeed, 0);
+            yield return new WaitForSeconds(0.2f);
+            playerAnimations[1].AttackAnimationStop_Bull();
+            _animator.SetBool("isDashing", false);
+            isDashing = false;
+        }
+    }
+
+    private IEnumerator LeftDashCoroutine()
+    {
+        while (isDashing == true)
+        {
+            rb.velocity = new Vector2(-dashSpeed, 0);
+            yield return new WaitForSeconds(0.2f);
+            playerAnimations[1].AttackAnimationStop_Bull();
+            _animator.SetBool("isDashingLeft", false);
+            isDashing = false;
+
+        }
+    }
+}

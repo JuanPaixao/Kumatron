@@ -239,7 +239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animalSpeed: 250
   _forceJump: 500
-  _auxAnimalSpeed: 0
   _movingTime: 0
   _toggleMove: 0
   randomMoveTime: 0

@@ -10,11 +10,18 @@ public class ReleaseAnimal : MonoBehaviour
     private GameObject[] animals;
     [SerializeField]
     private GameObject _egg;
+    private Vector2 _stop;
+
+    void Start()
+    {
+        _stop = new Vector2(0, 0);
+    }
+
     public void ReleasePlayerAnimal()
     {
         if (_player.animalWithMe != "")
         {
-            if (_player.animalWithMe == "Chicken" || _player.animalWithMe == "Chicken_Collision")
+            if (_player.animalWithMe == "Chicken")
             {
                 Instantiate(animals[0], this.transform.position, Quaternion.identity);
                 Debug.Log("Throwing the " + _player.animalWithMe);
@@ -23,7 +30,7 @@ public class ReleaseAnimal : MonoBehaviour
                 _player.animalPowerUp[0].SetActive(false);
                 StartCoroutine(ControlRayRoutine());
             }
-            else if (_player.animalWithMe == "Bull" || _player.animalWithMe == "Bull_Collision")
+            else if (_player.animalWithMe == "Bull")
             {
                 Instantiate(animals[1], this.transform.position, Quaternion.identity);
                 Debug.Log("Throwing the " + _player.animalWithMe);
@@ -32,7 +39,7 @@ public class ReleaseAnimal : MonoBehaviour
                 _player.animalPowerUp[1].SetActive(false);
                 StartCoroutine(ControlRayRoutine());
             }
-            else if (_player.animalWithMe == "Cow" || _player.animalWithMe == "Cow_Collision")
+            else if (_player.animalWithMe == "Cow")
             {
                 Instantiate(animals[2], this.transform.position, Quaternion.identity);
                 Debug.Log("Throwing the " + _player.animalWithMe);
@@ -43,7 +50,6 @@ public class ReleaseAnimal : MonoBehaviour
             }
         }
     }
-
     private IEnumerator ControlRayRoutine()
     {
         _player.rayFinished = false;
@@ -55,7 +61,7 @@ public class ReleaseAnimal : MonoBehaviour
     {
         if (_player.withAnimal == true)
         {
-            if (_player.animalWithMe == "Chicken" || _player.animalWithMe == "Chicken_Collision")
+            if (_player.animalWithMe == "Chicken")
             {
                 Instantiate(_egg, this.transform.position, Quaternion.identity);
             }
