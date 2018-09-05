@@ -6,40 +6,51 @@ public class PlayerAnimations : MonoBehaviour
 {
     public Animator animalWithPlayer;
 
-    void Start()
+    void Awake()
     {
         animalWithPlayer = GetComponent<Animator>();
 
     }
     public void StartIdleAnimation_Chicken()
     {
-        animalWithPlayer.SetBool("IdleAnimation", true);
+        if (animalWithPlayer != null)
+        {
+            animalWithPlayer.SetBool("IdleAnimation", true);
+        }
     }
     public void AttackAnimationPlay_Chicken()
     {
-        animalWithPlayer.SetBool("Shooting", true);
+        if (animalWithPlayer != null)
+        {
+            animalWithPlayer.SetBool("Shooting", true);
+        }
     }
     public void AttackAnimationStop_Chicken()
     {
-        animalWithPlayer.SetBool("Shooting", false);
+        if (animalWithPlayer != null)
+        {
+            animalWithPlayer.SetBool("Shooting", false);
+        }
     }
-
-
     public void StartIdleAnimation_Bull()
     {
-        animalWithPlayer.SetBool("IdleAnimation", true);
+        if (animalWithPlayer != null)
+        {
+            animalWithPlayer.SetBool("IdleAnimation", true);
+        }
     }
     public void AttackAnimationPlay_Bull()
     {
-        animalWithPlayer.SetBool("isDashing", true);
-    }
-    public void AttackAnimationPlayLeft_Bull()
-    {
-        animalWithPlayer.SetBool("isDashingLeft", true);
+        if (animalWithPlayer != null)
+        {
+            animalWithPlayer.SetBool("isDashing", true);
+        }
     }
     public void AttackAnimationStop_Bull()
     {
-        animalWithPlayer.SetBool("isDashing", false);
-        animalWithPlayer.SetBool("isDashingLeft", false);
+        if (animalWithPlayer != null)
+        {
+            animalWithPlayer.SetBool("isDashing", false);
+            }
     }
 }

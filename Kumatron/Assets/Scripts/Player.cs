@@ -43,12 +43,12 @@ public class Player : MonoBehaviour
     }
     private void PlayerAttack()
     {
-        if (Input.GetKeyDown(KeyCode.R) && rayFinished == true)
+        if (Input.GetKeyDown(KeyCode.Space) && withAnimal == true && rayFinished == true)
         {
             _releaseAnimal.ReleasePlayerAnimal();
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && Time.time > _cooldown)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > _cooldown)
         {
             _releaseAnimal.Attack();
             _cooldown = Time.time + _nextTime;
@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyUp(KeyCode.E))
+        else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             if (animalWithMe == "Chicken")
                 playerAnimations[0].AttackAnimationStop_Chicken();
@@ -115,44 +115,61 @@ public class Player : MonoBehaviour
 
     private void MovementAnimationsControl()
     {
-        if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.RightArrow)))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            playerDirection = "right";
-            isMoving = true;
             _animator.SetBool("isMovingRight", true);
             _animator.SetBool("isMovingLeft", false);
+            playerDirection = "right";
+            isMoving = true;
 
         }
-        else if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.LeftArrow)))
+        else if (Input.GetKeyDown(KeyCode.A))
         {
-            playerDirection = "left";
-            isMoving = true;
             _animator.SetBool("isMovingLeft", true);
             _animator.SetBool("isMovingRight", false);
-        }
-        else if (!Input.anyKey && isMoving == true && withAnimal == true && animalWithMe == "Bull")
-        {
-            isMoving = false;
-            _animator.SetBool("isMovingRight", false);
-            _animator.SetBool("isMovingLeft", false);
-            playerAnimations[1].AttackAnimationStop_Bull();
-        }
-        else if (!Input.anyKey && isMoving == true)
-        {
-            isMoving = false;
-            _animator.SetBool("isMovingRight", false);
-            _animator.SetBool("isMovingLeft", false);
+            playerDirection = "left";
+            isMoving = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && withAnimal == true && animalWithMe == "Bull" && isMoving == true)
+
+        if (isMoving == true && withAnimal == true && animalWithMe == "Bull")
+        {
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                _animator.SetBool("isMovingRight", false);
+                isMoving = false;
+            }
+            else if (Input.GetKeyUp(KeyCode.A))
+            {
+                _animator.SetBool("isMovingLeft", false);
+                isMoving = false;
+            }
+        }
+        else if (isMoving == true)
+        {
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                _animator.SetBool("isMovingRight", false);
+                isMoving = false;
+            }
+            else if (Input.GetKeyUp(KeyCode.A))
+            {
+                _animator.SetBool("isMovingLeft", false);
+                isMoving = false;
+            }
+        }
+
+        //bull attack
+
+        if (Input.GetKeyDown(KeyCode.Mouse0) && withAnimal == true && animalWithMe == "Bull" && isMoving == true)
         {
             playerAnimations[1].AttackAnimationPlay_Bull();
-            if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.LeftArrow) || playerDirection == "left"))
+            if (Input.GetKeyDown(KeyCode.A) || playerDirection == "left")
             {
                 _animator.SetBool("isDashingLeft", true);
                 Dash();
             }
-            else if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.RightArrow) || playerDirection == "right"))
+            else if (Input.GetKeyDown(KeyCode.D) || playerDirection == "right")
                 _animator.SetBool("isDashing", true);
             Dash();
         }
@@ -161,7 +178,6 @@ public class Player : MonoBehaviour
         if (isDashing == false)
         {
             rb.velocity = Vector2.zero;
-
         }
     }
 
