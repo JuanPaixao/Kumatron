@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private AbduptionRange abduptionRange;
     [SerializeField]
     private Animator _animator;
-    public bool isDashing;
+    public bool isDashing, isMoving;
 
 
     void Start()
@@ -39,35 +39,7 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
         PlayerAttack();
-
-        if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.RightArrow)))
-        {
-            playerDirection = "right";
-        }
-        else if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.LeftArrow)))
-        {
-            playerDirection = "left";
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && withAnimal == true && animalWithMe == "Bull")
-        {
-            playerAnimations[1].AttackAnimationPlay_Bull();
-            if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.LeftArrow) || playerDirection == "left"))
-            {
-                _animator.SetBool("isDashingLeft", true);
-                Dash();
-            }
-            else if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.RightArrow) || playerDirection == "right"))
-                _animator.SetBool("isDashing", true);
-            Dash();
-        }
-
-
-        if (isDashing == false)
-        {
-            rb.velocity = Vector2.zero;
-
-        }
+        MovementAnimationsControl();
     }
     private void PlayerAttack()
     {
@@ -138,6 +110,58 @@ public class Player : MonoBehaviour
             {
                 StartCoroutine(AnimalPowerUp(2));
             }
+        }
+    }
+
+    private void MovementAnimationsControl()
+    {
+        if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.RightArrow)))
+        {
+            playerDirection = "right";
+            isMoving = true;
+            _animator.SetBool("isMovingRight", true);
+            _animator.SetBool("isMovingLeft", false);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.LeftArrow)))
+        {
+            playerDirection = "left";
+            isMoving = true;
+            _animator.SetBool("isMovingLeft", true);
+            _animator.SetBool("isMovingRight", false);
+        }
+        else if (!Input.anyKey && isMoving == true && withAnimal == true && animalWithMe == "Bull")
+        {
+            isMoving = false;
+            _animator.SetBool("isMovingRight", false);
+            _animator.SetBool("isMovingLeft", false);
+            playerAnimations[1].AttackAnimationStop_Bull();
+        }
+        else if (!Input.anyKey && isMoving == true)
+        {
+            isMoving = false;
+            _animator.SetBool("isMovingRight", false);
+            _animator.SetBool("isMovingLeft", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && withAnimal == true && animalWithMe == "Bull" && isMoving == true)
+        {
+            playerAnimations[1].AttackAnimationPlay_Bull();
+            if (Input.GetKeyDown(KeyCode.A) || (Input.GetKeyDown(KeyCode.LeftArrow) || playerDirection == "left"))
+            {
+                _animator.SetBool("isDashingLeft", true);
+                Dash();
+            }
+            else if (Input.GetKeyDown(KeyCode.D) || (Input.GetKeyDown(KeyCode.RightArrow) || playerDirection == "right"))
+                _animator.SetBool("isDashing", true);
+            Dash();
+        }
+
+
+        if (isDashing == false)
+        {
+            rb.velocity = Vector2.zero;
+
         }
     }
 
