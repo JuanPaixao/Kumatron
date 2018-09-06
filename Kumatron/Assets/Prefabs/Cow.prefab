@@ -52,8 +52,8 @@ GameObject:
   - component: {fileID: 212796249623649454}
   - component: {fileID: 114600201361548876}
   - component: {fileID: 114072129708073104}
-  - component: {fileID: 70542747146258226}
   - component: {fileID: 50181747716209620}
+  - component: {fileID: 70147414891262292}
   - component: {fileID: 95362797578754186}
   m_Layer: 9
   m_Name: Cow
@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1559501506955904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.87, y: -0.139, z: 0}
+  m_LocalPosition: {x: -0.929, y: -0.139, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4652203737263718}
@@ -112,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059252907590010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.654, y: -0.386, z: 0}
+  m_LocalPosition: {x: -0.685, y: -0.32, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4652203737263718}
@@ -142,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202533479183500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.694, y: -0.181, z: 0}
+  m_LocalPosition: {x: -0.715, y: -0.133, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4652203737263718}
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &70542747146258226
+--- !u!70 &70147414891262292
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,9 +193,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019397259, y: 0.06}
-  m_Size: {x: 0.92174816, y: 0.92174816}
-  m_Direction: 0
+  m_Offset: {x: 0.00000000740733, y: 0.062137194}
+  m_Size: {x: 1.2333335, y: 0.7757288}
+  m_Direction: 1
 --- !u!95 &95362797578754186
 Animator:
   serializedVersion: 3

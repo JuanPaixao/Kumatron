@@ -10,12 +10,6 @@ public class ReleaseAnimal : MonoBehaviour
     private GameObject[] animals;
     [SerializeField]
     private GameObject _egg;
-    private Vector2 _stop;
-
-    void Start()
-    {
-        _stop = new Vector2(0, 0);
-    }
 
     public void ReleasePlayerAnimal()
     {

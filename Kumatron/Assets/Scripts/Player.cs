@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField]
-    private float _playerSpeed;
+    private float _playerSpeed, _auxSpeed, _cowSpeed;
     public bool withAnimal = false;
     public bool rayFinished = true;
     [SerializeField]
@@ -27,19 +27,27 @@ public class Player : MonoBehaviour
     private AbduptionRange abduptionRange;
     [SerializeField]
     private Animator _animator;
-    public bool isDashing, isMoving;
+    public bool isDashing;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _auxSpeed = _playerSpeed;
+        _cowSpeed = _playerSpeed * 2;
     }
     void Update()
     {
-        PlayerMovement();
         PlayerAttack();
-        MovementAnimationsControl();
+        MovementAnimationsBullControl();
+
+    }
+
+
+    void FixedUpdate()
+    {
+        PlayerMovement();
     }
     private void PlayerAttack()
     {
@@ -76,15 +84,31 @@ public class Player : MonoBehaviour
         {
             float horizontalMovement = Input.GetAxis("Horizontal");
             float verticalmovement = Input.GetAxis("Vertical");
-            rb.transform.Translate(new Vector2(horizontalMovement, verticalmovement) * _playerSpeed * Time.deltaTime, Space.World);
+            Vector2 movement = new Vector2(horizontalMovement, verticalmovement);
+            rb.MovePosition(rb.position + movement * _playerSpeed * Time.deltaTime);
+        }
+        if (playerCanMove != true)
+        {
+            _animator.SetBool("isMovingRight", false);
+            _animator.SetBool("isMovingLeft", false);
+        }
+
+
+        if (animalWithMe == "Cow")
+        {
+            _playerSpeed = _cowSpeed;
+        }
+        else
+        {
+            _playerSpeed = _auxSpeed;
         }
     }
 
-    private void OnCollisionStay2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Tilemap"))
         {
-            this.transform.position = (new Vector2(this.transform.position.x, this.transform.position.y));
+            rb.transform.position = (new Vector2(this.transform.position.x, this.transform.position.y));
         }
     }
 
@@ -113,63 +137,41 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void MovementAnimationsControl()
+    private void MovementAnimationsBullControl()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && playerCanMove == true)
         {
             _animator.SetBool("isMovingRight", true);
             _animator.SetBool("isMovingLeft", false);
             playerDirection = "right";
-            isMoving = true;
-
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.A) && playerCanMove == true)
         {
             _animator.SetBool("isMovingLeft", true);
             _animator.SetBool("isMovingRight", false);
             playerDirection = "left";
-            isMoving = true;
         }
 
 
-        if (isMoving == true && withAnimal == true && animalWithMe == "Bull")
+        if (Input.GetKeyUp(KeyCode.D) && playerCanMove == true)
         {
-            if (Input.GetKeyUp(KeyCode.D))
-            {
-                _animator.SetBool("isMovingRight", false);
-                isMoving = false;
-            }
-            else if (Input.GetKeyUp(KeyCode.A))
-            {
-                _animator.SetBool("isMovingLeft", false);
-                isMoving = false;
-            }
+            _animator.SetBool("isMovingRight", false);
         }
-        else if (isMoving == true)
+        else if (Input.GetKeyUp(KeyCode.A) && playerCanMove == true)
         {
-            if (Input.GetKeyUp(KeyCode.D))
-            {
-                _animator.SetBool("isMovingRight", false);
-                isMoving = false;
-            }
-            else if (Input.GetKeyUp(KeyCode.A))
-            {
-                _animator.SetBool("isMovingLeft", false);
-                isMoving = false;
-            }
+            _animator.SetBool("isMovingLeft", false);
         }
-
         //bull attack
 
-        if (Input.GetKeyDown(KeyCode.Mouse0) && withAnimal == true && animalWithMe == "Bull" && isMoving == true)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && animalWithMe == "Bull" && playerCanMove == true)
         {
             playerAnimations[1].AttackAnimationPlay_Bull();
-            if (Input.GetKeyDown(KeyCode.A) || playerDirection == "left")
+            if (Input.GetKeyDown(KeyCode.A) || playerDirection == "left" && playerCanMove == true)
             {
                 _animator.SetBool("isDashingLeft", true);
                 Dash();
             }
-            else if (Input.GetKeyDown(KeyCode.D) || playerDirection == "right")
+            else if (Input.GetKeyDown(KeyCode.D) || playerDirection == "right" && playerCanMove == true)
                 _animator.SetBool("isDashing", true);
             Dash();
         }
@@ -180,7 +182,6 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
-
 
     private IEnumerator AnimalPowerUp(int animal)
     {
@@ -211,10 +212,12 @@ public class Player : MonoBehaviour
         while (isDashing == true)
         {
             rb.velocity = new Vector2(dashSpeed, 0);
+            playerCanMove = false;
             yield return new WaitForSeconds(0.2f);
             playerAnimations[1].AttackAnimationStop_Bull();
             _animator.SetBool("isDashing", false);
             isDashing = false;
+            playerCanMove = true;
         }
     }
 
@@ -223,10 +226,12 @@ public class Player : MonoBehaviour
         while (isDashing == true)
         {
             rb.velocity = new Vector2(-dashSpeed, 0);
+            playerCanMove = false;
             yield return new WaitForSeconds(0.2f);
             playerAnimations[1].AttackAnimationStop_Bull();
             _animator.SetBool("isDashingLeft", false);
             isDashing = false;
+            playerCanMove = true;
 
         }
     }
