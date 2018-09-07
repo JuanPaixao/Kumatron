@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1559501506955904}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.929, y: -0.139, z: 0}
+  m_LocalPosition: {x: -0.94, y: -0.08600001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4652203737263718}
@@ -112,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059252907590010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.685, y: -0.32, z: 0}
+  m_LocalPosition: {x: -0.664, y: -0.35, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4652203737263718}
@@ -142,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202533479183500}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.715, y: -0.133, z: 0}
+  m_LocalPosition: {x: -0.72599995, y: -0.12300001, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4652203737263718}
@@ -155,7 +155,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1925840028385542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -0.501, z: 0}
+  m_LocalPosition: {x: 0.03, y: -0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4652203737263718}
@@ -193,8 +193,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00000000740733, y: 0.062137194}
-  m_Size: {x: 1.2333335, y: 0.7757288}
+  m_Offset: {x: 0.033690695, y: 0.004776534}
+  m_Size: {x: 1.4043821, y: 0.8904574}
   m_Direction: 1
 --- !u!95 &95362797578754186
 Animator:
@@ -238,7 +238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animalSpeed: 250
-  _forceJump: 500
   _movingTime: 0
   _toggleMove: 0
   randomMoveTime: 0

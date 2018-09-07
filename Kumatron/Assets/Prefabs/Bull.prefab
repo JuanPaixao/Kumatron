@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1719754919447348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.682, y: -0.51, z: 0}
+  m_LocalPosition: {x: -0.761, y: -0.485, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4418803199636044}
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638464259408334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.694, y: -0.181, z: 0}
+  m_LocalPosition: {x: -0.762, y: -0.181, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4418803199636044}
@@ -142,7 +142,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1831318922312886}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.87, y: -0.182, z: 0}
+  m_LocalPosition: {x: -0.9650003, y: -0.182, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4418803199636044}
@@ -193,8 +193,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006154114, y: -0.05534125}
-  m_Size: {x: 1.1611903, y: 0.91016746}
+  m_Offset: {x: 0.019465797, y: -0.07591878}
+  m_Size: {x: 1.4008154, y: 0.9513263}
   m_Direction: 1
 --- !u!95 &95617750377031232
 Animator:
@@ -238,7 +238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animalSpeed: 230
-  _forceJump: 500
   _movingTime: 0
   _toggleMove: 0
   randomMoveTime: 0

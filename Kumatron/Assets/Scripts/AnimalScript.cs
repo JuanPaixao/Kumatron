@@ -6,7 +6,7 @@ public class AnimalScript : MonoBehaviour
 {
 
     [SerializeField]
-    private float _animalSpeed, _forceJump, _movingTime, _toggleMove, randomMoveTime;
+    private float _animalSpeed, _movingTime, _toggleMove, randomMoveTime;
     private Rigidbody2D _rb;
     [SerializeField]
     private bool _movingRight = false;
@@ -66,17 +66,17 @@ public class AnimalScript : MonoBehaviour
             if (_hitDown == true)
             {
                 //chicken
-                if (this.gameObject.name == "Chicken" || this.gameObject.name == "Chicken_Collision")
+                if (this.gameObject.name == "Chicken")
                 {
                     _chickenAnimation.ChickenCanMove(true);
                 }
                 //bull
-                else if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
+                else if (this.gameObject.name == "Bull")
                 {
                     _bullAnimation.BullCanMove(true);
                 }
                 //cow
-                else if (this.gameObject.name == "Cow" || this.gameObject.name == "Cow_Collision")
+                else if (this.gameObject.name == "Cow")
                 {
                     _cowAnimation.CowCanMove(true);
                 }
@@ -85,15 +85,15 @@ public class AnimalScript : MonoBehaviour
         }
         else
         {
-            if (this.gameObject.name == "Chicken" || this.gameObject.name == "Chicken_Collision")
+            if (this.gameObject.name == "Chicken")
             {
                 _chickenAnimation.ChickenCanMove(false);
             }
-            else if (this.gameObject.name == "Bull" || this.gameObject.name == "Bull_Collision")
+            else if (this.gameObject.name == "Bull")
             {
                 _bullAnimation.BullCanMove(false);
             }
-            else if (this.gameObject.name == "Cow" || this.gameObject.name == "Cow_Collision")
+            else if (this.gameObject.name == "Cow")
             {
                 _cowAnimation.CowCanMove(false);
             }
@@ -118,7 +118,7 @@ public class AnimalScript : MonoBehaviour
             {
                 _chickenAnimation.ChickenIsFalling(true);
             }
-            _rb.AddForce(Vector2.up * _forceJump);
+            _rb.AddForce(Vector2.up*2000);
         }
         else if (_hit.collider == true)
         {
