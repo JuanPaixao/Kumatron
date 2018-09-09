@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964523632814250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 0, z: 0}
+  m_LocalPosition: {x: 1.2832763, y: -1.8403423, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4715427920457492}
@@ -116,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1719754919447348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.753, y: -0.469, z: 0}
+  m_LocalPosition: {x: -0.753, y: -0.475, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4418803199636044}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9d086c5e34d6042bd4aaf94adbbf91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullAnimator: {fileID: 0}
+  bullAnimator: {fileID: 95617750377031232}
 --- !u!114 &114871632998554800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,9 +238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animalSpeed: 230
-  _movingTime: 0
-  _toggleMove: 0
-  randomMoveTime: 0
+  _movingTime: 23.241055
+  _toggleMove: 11.601055
+  randomMoveTime: 11.601055
   _movingRight: 0
   hitDetection: {fileID: 4664081638056930}
   hitDetectionUpLevel: {fileID: 4715427920457492}
@@ -282,7 +282,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: febe3a5093862884d95f311bc63daa4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ae76f97d6037b74f931f56ffb25bfd8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
