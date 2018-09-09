@@ -10,7 +10,10 @@ public class AbduptionRange : MonoBehaviour
 
     void LateUpdate()
     {
-        this.transform.position = new Vector2(_player.transform.position.x, _player.transform.position.y - 2.06f);
+        if (_player != null)
+        {
+            this.transform.position = new Vector2(_player.transform.position.x, _player.transform.position.y - 2.06f);
+        }
     }
     private void OnTriggerStay2D(Collider2D other)
     {

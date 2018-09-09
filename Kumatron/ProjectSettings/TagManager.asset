@@ -12,6 +12,7 @@ TagManager:
   - Egg
   - UI
   - Enemy
+  - Milk
   layers:
   - Default
   - TransparentFX

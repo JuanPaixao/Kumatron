@@ -21,7 +21,7 @@ public class Egg : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Tilemap") || other.gameObject.CompareTag("Enemy"))
         {
-            if (other.gameObject.name == "Tilemap_Ground" || other.gameObject.name == "TriangleEnemy")
+            if (other.gameObject.name == "Tilemap_Ground" || other.gameObject.name == "Enemy")
             {
                 foreach (ContactPoint2D hit in other.contacts)
                 {
@@ -29,7 +29,7 @@ public class Egg : MonoBehaviour
                     hitPosition.y = hit.point.y - 0.01f * hit.normal.y;
                     _tilemapGround.SetTile(_tilemapGround.WorldToCell(hitPosition), null);
                     Instantiate(_explosion, this.transform.position, Quaternion.identity);
-                    Destroy(this.gameObject, 0.35f);
+                    Destroy(this.gameObject, 0.05f);
                 }
             }
             else

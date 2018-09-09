@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _auxSpeed = _playerSpeed;
-        _cowSpeed = _playerSpeed * 2;
+        _cowSpeed = _playerSpeed * 1.5f;
     }
     void Update()
     {
