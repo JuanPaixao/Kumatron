@@ -19,9 +19,9 @@ public class Egg : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Tilemap"))
+        if (other.gameObject.CompareTag("Tilemap") || other.gameObject.CompareTag("Enemy"))
         {
-            if (other.gameObject.name == "Tilemap_Ground")
+            if (other.gameObject.name == "Tilemap_Ground" || other.gameObject.name == "TriangleEnemy")
             {
                 foreach (ContactPoint2D hit in other.contacts)
                 {

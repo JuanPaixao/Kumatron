@@ -11,6 +11,7 @@ TagManager:
   - Ray
   - Egg
   - UI
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Animals
   - Animal_RayCast
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 

@@ -51,6 +51,13 @@ public class PlayerAnimations : MonoBehaviour
         if (animalWithPlayer != null)
         {
             animalWithPlayer.SetBool("isDashing", false);
-            }
+        }
+    }
+    public void StartIdleAnimation_Cow()
+    {
+        if (animalWithPlayer != null)
+        {
+            animalWithPlayer.SetBool("IdleAnimation", true);
+        }
     }
 }
