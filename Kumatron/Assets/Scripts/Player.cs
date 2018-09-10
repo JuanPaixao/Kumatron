@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Animator _animator;
     public bool isDashing, isMoving;
+    public float playerHP = 5;
 
 
     void Start()
@@ -294,6 +295,14 @@ public class Player : MonoBehaviour
             isDashing = false;
             playerCanMove = true;
 
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy_Shoot"))
+        {
+            playerHP--;
+            Destroy(other.gameObject);
         }
     }
 }

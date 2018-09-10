@@ -13,6 +13,8 @@ TagManager:
   - UI
   - Enemy
   - Milk
+  - PlayerComponents
+  - Enemy_Shoot
   layers:
   - Default
   - TransparentFX
