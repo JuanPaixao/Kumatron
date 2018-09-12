@@ -10,14 +10,20 @@ public class SquareEnemy : MonoBehaviour
     [SerializeField]
     private float _dashSpeed, _speed;
     private Rigidbody2D _rb;
-    private float _dashCooldown = 1.0f;
-    private float _nextDash;
     private Vector2 _targetPos;
+    private Animator _animator;
+    private EnemyElectrified _enemyElectrified;
+    [SerializeField]
+    private bool _electrified;
     void Start()
     {
+        
+        this.gameObject.name = "SquareEnemy";
+        _enemyElectrified = GetComponent<EnemyElectrified>();
+        _animator = GetComponent<Animator>();
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _rb = GetComponent<Rigidbody2D>();
-        _nextDash = 0;
+
     }
 
     void Update()
@@ -26,20 +32,91 @@ public class SquareEnemy : MonoBehaviour
         {
             Movement();
         }
+        if (enemyDashing == false)
+        {
+            _rb.velocity = Vector2.zero;
+            SetIdle();
+            StartCoroutine(DashTimeOn());
+        }
+        _electrified = _enemyElectrified.electrified;
+
     }
     private void Movement()
     {
-        if (Vector2.Distance(this.transform.position, _player.transform.position) < 7.5f && Vector2.Distance(this.transform.position,
-         _player.transform.position) > 3.5f)
+        if (_electrified == false)
         {
-            _rb.MovePosition(Vector2.MoveTowards(this.transform.position, _player.transform.position, _speed * Time.deltaTime));
-
+            if (Vector2.Distance(this.transform.position, _player.transform.position) < 7.5f && Vector2.Distance(this.transform.position,
+             _player.transform.position) > 7.0f)
+            {
+                _rb.MovePosition(Vector2.MoveTowards(this.transform.position, _player.transform.position, _speed * Time.deltaTime));
+            }
+            else if (Vector2.Distance(this.transform.position, _player.transform.position) < 7.0f && enemyDashing == false)
+            {
+                _rb.MovePosition(Vector2.MoveTowards(this.transform.position, _player.transform.position, _speed * Time.deltaTime));
+            }
+            else if (Vector2.Distance(this.transform.position, _player.transform.position) < 7.0f && enemyDashing == true)
+            {
+                if (_player.transform.position.x > this.transform.position.x)
+                {
+                    SetDashRight();
+                    _rb.AddForce(Vector2.right * _dashSpeed);
+                    StartCoroutine(DashTimeOff());
+                }
+                else if (_player.transform.position.x < this.transform.position.x)
+                {
+                    SetDashLeft();
+                    _rb.AddForce(Vector2.left * _dashSpeed);
+                    StartCoroutine(DashTimeOff());
+                }
+            }
         }
-        else if (Vector2.Distance(this.transform.position, _player.transform.position) < 3.5f)
+    }
+    public void CheckPosition()
+    {
+        if (enemyDashing == true)
         {
-            _rb.MovePosition(Vector2.MoveTowards(this.transform.position, _player.transform.position, _dashSpeed * Time.deltaTime));
-
+            if (_player.transform.position.x > this.transform.position.x)
+            {
+                SetDashRight();
+                _rb.AddForce(Vector2.right * _dashSpeed);
+                StartCoroutine(DashTimeOff());
+            }
+            else if (_player.transform.position.x < this.transform.position.x)
+            {
+                SetDashLeft();
+                _rb.AddForce(Vector2.left * _dashSpeed);
+                StartCoroutine(DashTimeOff());
+            }
         }
+    }
+    private IEnumerator DashTimeOff()
+    {
+        yield return new WaitForSeconds(0.6f);
+        enemyDashing = false;
+        SetIdle();
+    }
+    private IEnumerator DashTimeOn()
+    {
+        yield return new WaitForSeconds(1f);
+        enemyDashing = true;
+    }
+    private void SetIdle()
+    {
+        _animator.SetBool("isIdle", true);
+        _animator.SetBool("isDashingRight", false);
+        _animator.SetBool("isDashingLeft", false);
+    }
+    private void SetDashRight()
+    {
+        _animator.SetBool("isIdle", false);
+        _animator.SetBool("isDashingRight", true);
+        _animator.SetBool("isDashingLeft", false);
+    }
+    private void SetDashLeft()
+    {
+        _animator.SetBool("isIdle", false);
+        _animator.SetBool("isDashingRight", false);
+        _animator.SetBool("isDashingLeft", true);
     }
 }
 

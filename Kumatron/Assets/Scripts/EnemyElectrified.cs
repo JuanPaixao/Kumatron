@@ -9,7 +9,6 @@ public class EnemyElectrified : MonoBehaviour
     void Start()
     {
         _enemyAnimator = GetComponent<Animator>();
-        this.gameObject.name = "Enemy";
     }
 
     public void isElectrified()

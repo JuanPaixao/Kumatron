@@ -126,6 +126,8 @@ public class AnimalScript : MonoBehaviour
                 _chickenAnimation.ChickenIsFalling(true);
             }
             _rb.AddForce(Vector2.up * 2000);
+            _isWalking = true;
+
         }
         else if (_hit.collider == true)
         {

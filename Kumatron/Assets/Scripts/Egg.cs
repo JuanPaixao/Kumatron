@@ -21,7 +21,7 @@ public class Egg : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Tilemap") || other.gameObject.CompareTag("Enemy"))
         {
-            if (other.gameObject.name == "Tilemap_Ground" || other.gameObject.name == "Enemy")
+            if (other.gameObject.name == "Tilemap_Ground" || other.gameObject.CompareTag ("Enemy"))
             {
                 foreach (ContactPoint2D hit in other.contacts)
                 {

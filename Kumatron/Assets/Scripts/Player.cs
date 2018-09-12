@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
     private Animator _animator;
     public bool isDashing, isMoving;
     public float playerHP = 5;
+    [SerializeField]
+    private GameObject _explosion;
 
 
     void Start()
@@ -45,6 +47,18 @@ public class Player : MonoBehaviour
         if (playerHP < 0)
         {
             PlayerDefeated();
+        }
+        if (rayFinished != true)
+        {
+            this.gameObject.transform.position = this.gameObject.transform.position;
+        }
+        if (rayFinished != true)
+        {
+            rb.mass = 50;
+        }
+        else
+        {
+            rb.mass = 1;
         }
     }
 
@@ -135,16 +149,23 @@ public class Player : MonoBehaviour
         {
             rb.transform.position = (new Vector2(this.transform.position.x, this.transform.position.y));
         }
-        if (other.gameObject.CompareTag("Enemy") && rayFinished == true)
+        if (other.gameObject.CompareTag("Enemy") && other.gameObject.name == "SquareEnemy" && rayFinished == true)
         {
+            SquareEnemy squareEnemy = other.gameObject.GetComponent<SquareEnemy>();
+            playerHP--;
             playerCanMove = false;
-            if (other.gameObject.transform.position.x > this.gameObject.transform.position.x)
+            if (squareEnemy != null && squareEnemy.enemyDashing == true)
             {
-                rb.AddForce(Vector2.left * 10, ForceMode2D.Impulse);
-            }
-            else if (other.gameObject.transform.position.x < this.gameObject.transform.position.x)
-            {
-                rb.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
+                if (other.gameObject.transform.position.x >= this.gameObject.transform.position.x)
+                {
+                    Instantiate(_explosion, this.transform.position, Quaternion.identity);
+                    rb.AddForce(Vector2.left * 10, ForceMode2D.Impulse);
+                }
+                else if (other.gameObject.transform.position.x < this.gameObject.transform.position.x)
+                {
+                    Instantiate(_explosion, this.transform.position, Quaternion.identity);
+                    rb.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
+                }
             }
             StartCoroutine(PlayerCanMoveAgain());
         }

@@ -14,6 +14,7 @@ public class TriangleEnemy : MonoBehaviour
     void Start()
     {
 
+        this.gameObject.name = "TriangleEnemy";
         _rb = GetComponent<Rigidbody2D>();
         _enemyElectrified = GetComponent<EnemyElectrified>();
     }
