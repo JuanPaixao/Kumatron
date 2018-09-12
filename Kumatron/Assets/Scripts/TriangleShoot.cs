@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class TriangleShoot : MonoBehaviour
 {
-    private Player _player;
-
     [SerializeField]
     private float _speed;
+    private Animator _animator;
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        _animator = GetComponent<Animator>();
     }
     void Update()
     {
         transform.Translate(Vector2.right * -_speed * Time.deltaTime);
+    }
+    public void DestroyingShoot()
+    {
+        Destroy(this.gameObject);
+    }
+    public void DestroyingShootAnimation()
+    {
+        _speed = 0;
+        _animator.SetBool("isDestroying", true);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Tilemap"))
+        {
+            DestroyingShootAnimation();
+        }
     }
 }

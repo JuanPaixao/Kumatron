@@ -41,8 +41,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerAttack();
-        MovementAnimationsBullControl();
-
+        MovementAnimationsControl();
+        if (playerHP < 0)
+        {
+            PlayerDefeated();
+        }
     }
 
 
@@ -89,6 +92,7 @@ public class Player : MonoBehaviour
     {
         if (playerCanMove == true)
         {
+            rb.velocity = Vector2.zero;
             float horizontalMovement = Input.GetAxis("Horizontal");
             float verticalmovement = Input.GetAxis("Vertical");
             Vector2 movement = new Vector2(horizontalMovement, verticalmovement);
@@ -131,6 +135,19 @@ public class Player : MonoBehaviour
         {
             rb.transform.position = (new Vector2(this.transform.position.x, this.transform.position.y));
         }
+        if (other.gameObject.CompareTag("Enemy") && rayFinished == true)
+        {
+            playerCanMove = false;
+            if (other.gameObject.transform.position.x > this.gameObject.transform.position.x)
+            {
+                rb.AddForce(Vector2.left * 10, ForceMode2D.Impulse);
+            }
+            else if (other.gameObject.transform.position.x < this.gameObject.transform.position.x)
+            {
+                rb.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
+            }
+            StartCoroutine(PlayerCanMoveAgain());
+        }
     }
 
     public void TurnRayOn(string animalName)
@@ -158,7 +175,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void MovementAnimationsBullControl()
+    private void MovementAnimationsControl()
     {
         if (animalWithMe != "Cow")
         {
@@ -237,12 +254,6 @@ public class Player : MonoBehaviour
                 _animator.SetBool("isDashing", true);
             Dash();
         }
-
-
-        if (isDashing == false)
-        {
-            rb.velocity = Vector2.zero;
-        }
     }
 
     private IEnumerator AnimalPowerUp(int animal)
@@ -268,6 +279,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void PlayerDefeated()
+    {
+
+    }
+
 
     private IEnumerator RightDashCoroutine()
     {
@@ -279,6 +295,7 @@ public class Player : MonoBehaviour
             playerAnimations[1].AttackAnimationStop_Bull();
             _animator.SetBool("isDashing", false);
             isDashing = false;
+            rb.velocity = Vector2.zero;
             playerCanMove = true;
         }
     }
@@ -293,16 +310,24 @@ public class Player : MonoBehaviour
             playerAnimations[1].AttackAnimationStop_Bull();
             _animator.SetBool("isDashingLeft", false);
             isDashing = false;
+            rb.velocity = Vector2.zero;
             playerCanMove = true;
 
         }
     }
+    private IEnumerator PlayerCanMoveAgain()
+    {
+        yield return new WaitForSeconds(0.25f);
+        playerCanMove = true;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        TriangleShoot triangleShoot;
         if (other.gameObject.CompareTag("Enemy_Shoot"))
         {
+            triangleShoot = other.gameObject.GetComponent<TriangleShoot>();
+            triangleShoot.DestroyingShootAnimation();
             playerHP--;
-            Destroy(other.gameObject);
         }
     }
 }

@@ -59,6 +59,13 @@ public class AnimalScript : MonoBehaviour
             StartCoroutine(AnimalAbducted());
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Ray"))
+        {
+            StartCoroutine(AnimalAbducted());
+        }
+    }
     private void Walk()
     {
         if (_isWalking == true)
@@ -99,7 +106,7 @@ public class AnimalScript : MonoBehaviour
             }
         }
     }
-    
+
     private void CheckJumpCollision()
     {
         //turn

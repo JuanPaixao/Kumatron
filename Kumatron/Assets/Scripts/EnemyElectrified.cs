@@ -12,8 +12,6 @@ public class EnemyElectrified : MonoBehaviour
         this.gameObject.name = "Enemy";
     }
 
-    // Update is called once per frame
-
     public void isElectrified()
     {
         _enemyAnimator.SetBool("isElectrified", true);
