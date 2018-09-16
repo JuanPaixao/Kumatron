@@ -27,7 +27,6 @@ public class MilkParticle : MonoBehaviour
                 _milkParticles[0].Play();
                 _milkParticles[1].Play();
                 _milkParticles[2].Play();
-                Debug.Log("its raining milk");
             }
         }
         else

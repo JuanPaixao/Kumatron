@@ -15,6 +15,7 @@ TagManager:
   - Milk
   - PlayerComponents
   - Enemy_Shoot
+  - Cage
   layers:
   - Default
   - TransparentFX

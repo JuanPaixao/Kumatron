@@ -26,7 +26,6 @@ public class AbduptionRange : MonoBehaviour
                 _player.TurnRayOn(other.gameObject.name);
             }
         }
-
     }
 }
 

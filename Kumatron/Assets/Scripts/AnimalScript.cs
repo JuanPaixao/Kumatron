@@ -23,6 +23,7 @@ public class AnimalScript : MonoBehaviour
 
     [SerializeField]
     private bool _isWalking;
+    public bool _caged;
 
     void Start()
     {
@@ -47,10 +48,13 @@ public class AnimalScript : MonoBehaviour
     }
     void FixedUpdate()
     {
-        CheckJumpCollision();
-        CheckGrounded();
-        Walk();
-        checkTime();
+        if (_caged != true)
+        {
+            CheckJumpCollision();
+            CheckGrounded();
+            Walk();
+            checkTime();
+        }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -58,12 +62,23 @@ public class AnimalScript : MonoBehaviour
         {
             StartCoroutine(AnimalAbducted());
         }
+        if (other.CompareTag("Cage"))
+        {
+            _caged = true;
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ray"))
         {
             StartCoroutine(AnimalAbducted());
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (_caged == true)
+        {
+            _caged = false;
         }
     }
     private void Walk()

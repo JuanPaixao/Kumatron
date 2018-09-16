@@ -13,17 +13,16 @@ public class EnemyElectrified : MonoBehaviour
 
     public void isElectrified()
     {
-        _enemyAnimator.SetBool("isElectrified", true);
         electrified = true;
+        _enemyAnimator.SetBool("isElectrified", true);
     }
     public void stopElectrified()
     {
-        _enemyAnimator.SetBool("isElectrified", false);
         electrified = false;
+        _enemyAnimator.SetBool("isElectrified", false);
     }
     void OnParticleCollision(GameObject other)
     {
         isElectrified();
     }
-
 }

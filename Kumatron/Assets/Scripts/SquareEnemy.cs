@@ -17,7 +17,7 @@ public class SquareEnemy : MonoBehaviour
     private bool _electrified;
     void Start()
     {
-        
+
         this.gameObject.name = "SquareEnemy";
         _enemyElectrified = GetComponent<EnemyElectrified>();
         _animator = GetComponent<Animator>();
@@ -28,7 +28,8 @@ public class SquareEnemy : MonoBehaviour
 
     void Update()
     {
-        if (_player != null)
+        _electrified = _enemyElectrified.electrified;
+        if (_player != null && _electrified == false)
         {
             Movement();
         }
@@ -38,8 +39,6 @@ public class SquareEnemy : MonoBehaviour
             SetIdle();
             StartCoroutine(DashTimeOn());
         }
-        _electrified = _enemyElectrified.electrified;
-
     }
     private void Movement()
     {

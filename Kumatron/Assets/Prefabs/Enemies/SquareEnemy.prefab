@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4046415706455434}
   - component: {fileID: 212494133961335074}
-  - component: {fileID: 114804598031121234}
   - component: {fileID: 114089022040073506}
+  - component: {fileID: 114804598031121234}
   - component: {fileID: 114968032821828904}
   - component: {fileID: 58995594568138598}
   - component: {fileID: 50684325495033734}
@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285506015097926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.56, y: -0.05, z: 0}
+  m_LocalPosition: {x: 4.701512, y: -0.59985805, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDashing: 0
   _dashSpeed: 15
-  _speed: 7.5
+  _speed: 5.75
   _electrified: 0
 --- !u!114 &114804598031121234
 MonoBehaviour:
