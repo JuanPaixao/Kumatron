@@ -23,8 +23,7 @@ public class AnimalScript : MonoBehaviour
 
     [SerializeField]
     private bool _isWalking;
-    public bool _caged;
-
+    public bool caged;
     void Start()
     {
         if (this.gameObject.name == "Chicken")
@@ -44,11 +43,10 @@ public class AnimalScript : MonoBehaviour
         _bullAnimation = GetComponent<BullAnimationControl>();
         _cowAnimation = GetComponent<CowAnimationControl>();
         _toggleMove = randomMoveTime;
-
     }
     void FixedUpdate()
     {
-        if (_caged != true)
+        if (caged == false)
         {
             CheckJumpCollision();
             CheckGrounded();
@@ -64,7 +62,7 @@ public class AnimalScript : MonoBehaviour
         }
         if (other.CompareTag("Cage"))
         {
-            _caged = true;
+            caged = true;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -72,13 +70,6 @@ public class AnimalScript : MonoBehaviour
         if (other.CompareTag("Ray"))
         {
             StartCoroutine(AnimalAbducted());
-        }
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (_caged == true)
-        {
-            _caged = false;
         }
     }
     private void Walk()
@@ -146,7 +137,7 @@ public class AnimalScript : MonoBehaviour
         }
         else if (_hit.collider == true)
         {
-            if (_isWalking == true)
+            if (_isWalking == true && !_hit.collider.CompareTag("Cage"))
             {
                 if (_movingRight == true)
                 {
@@ -256,6 +247,5 @@ public class AnimalScript : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
 }
 
