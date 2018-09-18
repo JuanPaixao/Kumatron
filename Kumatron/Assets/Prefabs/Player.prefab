@@ -430,7 +430,7 @@ MonoBehaviour:
   isDashing: 0
   isMoving: 0
   playerHP: 5
-  _explosion: {fileID: 1566783808360096, guid: 7c033fce2ccd683459969b95c45d2226, type: 2}
+  _explosion: {fileID: 1689343271267804, guid: 72c7b310e549cd740bcb23072302ba37, type: 2}
 --- !u!114 &114766915202750992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14280,7 +14280,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 4920cd29f1ad68142a3d481fcb03cae4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14326,7 +14326,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: c1b5f5164b771134a81d4296a6273153, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14418,7 +14418,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: dfd5b51e480891f41a6dc92003de7a1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

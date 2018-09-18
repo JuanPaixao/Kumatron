@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     private GameObject _explosion;
 
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -149,7 +150,7 @@ public class Player : MonoBehaviour
         {
             rb.transform.position = (new Vector2(this.transform.position.x, this.transform.position.y));
         }
-        if (other.gameObject.CompareTag("Enemy") && other.gameObject.name == "SquareEnemy" && rayFinished == true)
+        if (other.gameObject.CompareTag("Enemy") && other.gameObject.name == "SquareEnemy" && rayFinished == true && isDashing == false)
         {
             SquareEnemy squareEnemy = other.gameObject.GetComponent<SquareEnemy>();
             playerHP--;
@@ -159,12 +160,12 @@ public class Player : MonoBehaviour
                 if (other.gameObject.transform.position.x >= this.gameObject.transform.position.x)
                 {
                     Instantiate(_explosion, this.transform.position, Quaternion.identity);
-                    rb.AddForce(Vector2.left * 10, ForceMode2D.Impulse);
+                    rb.AddForce(Vector2.left * 15, ForceMode2D.Impulse);
                 }
                 else if (other.gameObject.transform.position.x < this.gameObject.transform.position.x)
                 {
                     Instantiate(_explosion, this.transform.position, Quaternion.identity);
-                    rb.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
+                    rb.AddForce(Vector2.right * 15, ForceMode2D.Impulse);
                 }
             }
             StartCoroutine(PlayerCanMoveAgain());
@@ -351,4 +352,5 @@ public class Player : MonoBehaviour
             playerHP--;
         }
     }
+
 }

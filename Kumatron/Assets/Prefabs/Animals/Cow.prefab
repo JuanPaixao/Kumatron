@@ -125,7 +125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408896046828044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -2.057, z: 0}
+  m_LocalPosition: {x: -3.16, y: 5.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4145270980299462}
@@ -246,7 +246,10 @@ MonoBehaviour:
   hitDetectionUpLevel: {fileID: 4145270980299462}
   hitDetectionDownLevel: {fileID: 4966983385991838}
   hitHeightCheckLevel: {fileID: 4308915448323108}
+  _circleEnemies: []
   _isWalking: 0
+  caged: 0
+  chased: 0
 --- !u!212 &212796249623649454
 SpriteRenderer:
   m_ObjectHideFlags: 1

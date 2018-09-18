@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285506015097926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.701512, y: -0.59985805, z: 0}
+  m_LocalPosition: {x: 10.768053, y: 1.8959522, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDashing: 0
-  _dashSpeed: 15
-  _speed: 5.75
+  _dashSpeed: 14
+  _speed: 5.6
   _electrified: 0
 --- !u!114 &114804598031121234
 MonoBehaviour:
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyHP: 2
-  _enemyExplosion: {fileID: 1689343271267804, guid: 72c7b310e549cd740bcb23072302ba37,
+  _enemyExplosion: {fileID: 1346925560943860, guid: 6df17b1cc561a2b4883a7e29528d41b2,
     type: 2}
 --- !u!114 &114968032821828904
 MonoBehaviour:

@@ -10,9 +10,15 @@ public class Enemy : MonoBehaviour
     private Player _player;
     [SerializeField]
     private GameObject _enemyExplosion;
+    public Rigidbody2D rb;
+    [SerializeField]
+    public Transform LeftDetection;
+    [SerializeField]
+    public Transform RightDetection;
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();   
+        rb = GetComponent<Rigidbody2D>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
     void Update()
     {

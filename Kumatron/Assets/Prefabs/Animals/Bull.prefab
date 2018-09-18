@@ -246,7 +246,10 @@ MonoBehaviour:
   hitDetectionUpLevel: {fileID: 4715427920457492}
   hitDetectionDownLevel: {fileID: 4898310631683704}
   hitHeightCheckLevel: {fileID: 4648940218658478}
+  _circleEnemies: []
   _isWalking: 0
+  caged: 0
+  chased: 0
 --- !u!212 &212585893844980966
 SpriteRenderer:
   m_ObjectHideFlags: 1

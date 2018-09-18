@@ -21,9 +21,12 @@ public class AbduptionRange : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Animal") && Input.GetKey(KeyCode.Space))
             {
-                otherObject = other.gameObject.name;
-
-                _player.TurnRayOn(other.gameObject.name);
+                AnimalScript animal = other.GetComponent<AnimalScript>();
+                if (animal != null && animal.caged != true)
+                {
+                    otherObject = other.gameObject.name;
+                    _player.TurnRayOn(other.gameObject.name);
+                }
             }
         }
     }

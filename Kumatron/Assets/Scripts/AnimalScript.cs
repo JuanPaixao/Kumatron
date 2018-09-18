@@ -20,10 +20,13 @@ public class AnimalScript : MonoBehaviour
     private ChickenAnimationControl _chickenAnimation;
     private BullAnimationControl _bullAnimation;
     private CowAnimationControl _cowAnimation;
+    [SerializeField]
+    private GameObject[] _circleEnemies;
 
     [SerializeField]
     private bool _isWalking;
     public bool caged;
+    public bool chased;
     void Start()
     {
         if (this.gameObject.name == "Chicken")
@@ -48,10 +51,11 @@ public class AnimalScript : MonoBehaviour
     {
         if (caged == false)
         {
-            CheckJumpCollision();
+            CheckCollision();
             CheckGrounded();
             Walk();
             checkTime();
+            _isWalking = false;
         }
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -113,7 +117,7 @@ public class AnimalScript : MonoBehaviour
         }
     }
 
-    private void CheckJumpCollision()
+    private void CheckCollision()
     {
         //turn
         _hit = Physics2D.Raycast(hitDetection.position, Vector2.zero, _animalSpeed, ~_layerMask);

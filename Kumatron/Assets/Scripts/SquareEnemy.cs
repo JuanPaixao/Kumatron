@@ -96,7 +96,7 @@ public class SquareEnemy : MonoBehaviour
     }
     private IEnumerator DashTimeOn()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.2f);
         enemyDashing = true;
     }
     private void SetIdle()

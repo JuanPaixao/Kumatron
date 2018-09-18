@@ -16,6 +16,7 @@ TagManager:
   - PlayerComponents
   - Enemy_Shoot
   - Cage
+  - Exit
   layers:
   - Default
   - TransparentFX
