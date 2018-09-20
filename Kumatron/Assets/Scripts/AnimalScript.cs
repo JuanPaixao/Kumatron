@@ -31,15 +31,15 @@ public class AnimalScript : MonoBehaviour
     {
         if (this.gameObject.name == "Chicken")
         {
-            randomMoveTime = Random.Range(3.32f, 10);
+            randomMoveTime = Random.Range(3.32f, 7);
         }
         else if (this.gameObject.name == "Bull")
         {
-            randomMoveTime = Random.Range(6.5f, 14);
+            randomMoveTime = Random.Range(6.5f, 8);
         }
         else if (this.gameObject.name == "Cow")
         {
-            randomMoveTime = Random.Range(4, 11);
+            randomMoveTime = Random.Range(4, 9);
         }
         _rb = GetComponent<Rigidbody2D>();
         _chickenAnimation = GetComponent<ChickenAnimationControl>();
@@ -55,6 +55,9 @@ public class AnimalScript : MonoBehaviour
             CheckGrounded();
             Walk();
             checkTime();
+        }
+        else
+        {
             _isWalking = false;
         }
     }
@@ -252,4 +255,3 @@ public class AnimalScript : MonoBehaviour
         }
     }
 }
-

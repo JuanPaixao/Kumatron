@@ -17,6 +17,7 @@ TagManager:
   - Enemy_Shoot
   - Cage
   - Exit
+  - Factory
   layers:
   - Default
   - TransparentFX

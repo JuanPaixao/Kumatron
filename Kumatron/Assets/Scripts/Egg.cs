@@ -19,9 +19,9 @@ public class Egg : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Tilemap") || other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Tilemap") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Factory"))
         {
-            if (other.gameObject.name == "Tilemap_Ground" || other.gameObject.CompareTag ("Enemy"))
+            if (other.gameObject.name == "Tilemap_Ground" || other.gameObject.CompareTag("Enemy"))
             {
                 foreach (ContactPoint2D hit in other.contacts)
                 {
@@ -32,10 +32,13 @@ public class Egg : MonoBehaviour
                     Destroy(this.gameObject, 0.05f);
                 }
             }
+
             else
             {
-                Destroy(this.gameObject, 0.35f);
+                Instantiate(_explosion, this.transform.position, Quaternion.identity);
+                Destroy(this.gameObject, 0.05f);
             }
+
         }
     }
 }

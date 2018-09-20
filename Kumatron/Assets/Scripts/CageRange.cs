@@ -30,6 +30,7 @@ public class CageRange : MonoBehaviour
     private bool _electrified;
     void Start()
     {
+        this.gameObject.name = "CircleEnemy";
         _enemyElectrified = GetComponent<EnemyElectrified>();
         _rb = GetComponent<Rigidbody2D>();
         StartCoroutine(CircleEnemyCoroutine());

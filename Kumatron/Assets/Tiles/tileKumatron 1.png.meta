@@ -1,72 +1,74 @@
 fileFormatVersion: 2
-guid: eb6040751d566aa45909b9299bb23940
+guid: ecf44b54f89ae3447ab7d20be641c103
 TextureImporter:
   fileIDToRecycleName:
-    21300000: tileKumatron_0
-    21300002: tileKumatron_1
-    21300004: tileKumatron_2
-    21300006: tileKumatron_3
-    21300008: tileKumatron_4
-    21300010: tileKumatron_5
-    21300012: tileKumatron_6
-    21300014: tileKumatron_7
-    21300016: tileKumatron_8
-    21300018: tileKumatron_9
-    21300020: tileKumatron_10
-    21300022: tileKumatron_11
-    21300024: tileKumatron_12
-    21300026: tileKumatron_13
-    21300028: tileKumatron_14
-    21300030: tileKumatron_15
-    21300032: tileKumatron_16
-    21300034: tileKumatron_17
-    21300036: tileKumatron_18
-    21300038: tileKumatron_19
-    21300040: tileKumatron_20
-    21300042: tileKumatron_21
-    21300044: tileKumatron_22
-    21300046: tileKumatron_23
-    21300048: tileKumatron_24
-    21300050: tileKumatron_25
-    21300052: tileKumatron_26
-    21300054: tileKumatron_27
-    21300056: tileKumatron_28
-    21300058: tileKumatron_29
-    21300060: tileKumatron_30
-    21300062: tileKumatron_31
-    21300064: tileKumatron_32
-    21300066: tileKumatron_33
-    21300068: tileKumatron_34
-    21300070: tileKumatron_35
-    21300072: tileKumatron_36
-    21300074: tileKumatron_37
-    21300076: tileKumatron_38
-    21300078: tileKumatron_39
-    21300080: tileKumatron_40
-    21300082: tileKumatron_41
-    21300084: tileKumatron_42
-    21300086: tileKumatron_43
-    21300088: tileKumatron_44
-    21300090: tileKumatron_45
-    21300092: tileKumatron_46
-    21300094: tileKumatron_47
-    21300096: tileKumatron_48
-    21300098: tileKumatron_49
-    21300100: tileKumatron_50
-    21300102: tileKumatron_51
-    21300104: tileKumatron_52
-    21300106: tileKumatron_53
-    21300108: tileKumatron_54
-    21300110: tileKumatron_55
-    21300112: tileKumatron_56
-    21300114: tileKumatron_57
-    21300116: tileKumatron_58
-    21300118: tileKumatron_59
-    21300120: tileKumatron_60
-    21300122: tileKumatron_61
-    21300124: tileKumatron_62
-    21300126: tileKumatron_63
-    21300128: tileKumatron_64
+    21300000: tileKumatron 1_0
+    21300002: tileKumatron 1_1
+    21300004: tileKumatron 1_2
+    21300006: tileKumatron 1_3
+    21300008: tileKumatron 1_4
+    21300010: tileKumatron 1_5
+    21300012: tileKumatron 1_6
+    21300014: tileKumatron 1_7
+    21300016: tileKumatron 1_8
+    21300018: tileKumatron 1_9
+    21300020: tileKumatron 1_10
+    21300022: tileKumatron 1_11
+    21300024: tileKumatron 1_12
+    21300026: tileKumatron 1_13
+    21300028: tileKumatron 1_14
+    21300030: tileKumatron 1_15
+    21300032: tileKumatron 1_16
+    21300034: tileKumatron 1_17
+    21300036: tileKumatron 1_18
+    21300038: tileKumatron 1_19
+    21300040: tileKumatron 1_20
+    21300042: tileKumatron 1_21
+    21300044: tileKumatron 1_22
+    21300046: tileKumatron 1_23
+    21300048: tileKumatron 1_24
+    21300050: tileKumatron 1_25
+    21300052: tileKumatron 1_26
+    21300054: tileKumatron 1_27
+    21300056: tileKumatron 1_28
+    21300058: tileKumatron 1_29
+    21300060: tileKumatron 1_30
+    21300062: tileKumatron 1_31
+    21300064: tileKumatron 1_32
+    21300066: tileKumatron 1_33
+    21300068: tileKumatron 1_34
+    21300070: tileKumatron 1_35
+    21300072: tileKumatron 1_36
+    21300074: tileKumatron 1_37
+    21300076: tileKumatron 1_38
+    21300078: tileKumatron 1_39
+    21300080: tileKumatron 1_40
+    21300082: tileKumatron 1_41
+    21300084: tileKumatron 1_42
+    21300086: tileKumatron 1_43
+    21300088: tileKumatron 1_44
+    21300090: tileKumatron 1_45
+    21300092: tileKumatron 1_46
+    21300094: tileKumatron 1_47
+    21300096: tileKumatron 1_48
+    21300098: tileKumatron 1_49
+    21300100: tileKumatron 1_50
+    21300102: tileKumatron 1_51
+    21300104: tileKumatron 1_52
+    21300106: tileKumatron 1_53
+    21300108: tileKumatron 1_54
+    21300110: tileKumatron 1_55
+    21300112: tileKumatron 1_56
+    21300114: tileKumatron 1_57
+    21300116: tileKumatron 1_58
+    21300118: tileKumatron 1_59
+    21300120: tileKumatron 1_60
+    21300122: tileKumatron 1_61
+    21300124: tileKumatron 1_62
+    21300126: tileKumatron 1_63
+    21300128: tileKumatron 1_64
+    21300130: tileKumatron 1_65
+    21300132: tileKumatron 1_66
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -193,7 +195,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tileKumatron_0
+      name: tileKumatron 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -211,16 +213,40 @@ TextureImporter:
         - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: d586fb0b33b98d644a6a5d7c260e6e99
+      spriteID: 910f4227bcb14c94fb6f0b53305e2792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_1
+      name: tileKumatron 1_1
       rect:
         serializedVersion: 2
         x: 30
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -14}
+        - {x: -15, y: 12}
+        - {x: 15, y: 12}
+        - {x: 15, y: -14}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca6092155d1c9c4e85178e5b6270ac6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_2
+      rect:
+        serializedVersion: 2
+        x: 60
         y: 270
         width: 30
         height: 30
@@ -235,17 +261,429 @@ TextureImporter:
         - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: c314024cd2a250847986f84accf4150e
+      spriteID: bcaef8a0de9eda841a95c3724a40507b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_2
+      name: tileKumatron 1_3
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881824cfd1d5bdf4fa91d25c64d9d0b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_4
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf0d4ad7c5b1f7489fa0e7906da800f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088422cd54082bf408347393ab974c82
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_6
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 270
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b0e27b2622e9a42a7cc1548f153c10
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c677be1ca98044485f842d6f0f650a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_8
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c3e5700a2d7a04db8e9aa3342d997c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_9
       rect:
         serializedVersion: 2
         x: 60
-        y: 270
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288df366074513149836f7f7154b7799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_10
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ddf8bdd2bd0144a9d7df6e10399136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_11
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -10}
+        - {x: 15, y: -10}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02153ed0cf1cc924c9ed7995eaa9b220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_12
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -10}
+        - {x: 15, y: -10}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: acdef26edba910a42a0600e67c9286a2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_13
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 240
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -10}
+        - {x: 14, y: -10}
+        - {x: 14, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f0fc9d704f4234a851e1bea349f586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -10}
+        - {x: 15, y: -10}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26d83cfcd432634ea5e51bd67b693c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_15
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -14, y: -15}
+        - {x: -14, y: -10}
+        - {x: 15, y: -10}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3db84c52a3b9e42917213d82a7db65
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_16
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878ae15f30237f64fb614bbcba660b14
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_17
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 0}
+        - {x: 15, y: 0}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29999eb8dd9270641ab29eb5503f7998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_18
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 0}
+        - {x: 15, y: 0}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3456f0200faaf5b48a99c15c403971f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_19
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 0}
+        - {x: 15, y: 0}
+        - {x: 15, y: -15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be40a4cbeb87404ead490f623c658d7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_20
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 210
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3252824283e60a847ba3ac8a39e79b90
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 180
         width: 30
         height: 30
       alignment: 0
@@ -259,117 +697,17 @@ TextureImporter:
         - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 625a5d2714c5069489dff7d2579a7a67
+      spriteID: 42ac8c6b450417443b87e4df9e33e0fb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_3
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 270
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b85095241615c644bc9661b50028e89
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_4
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 270
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1791608efbdb52f45bffb19e15070c9f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_5
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 270
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7c3e07921c3f634bb7ae2397ea468b6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_6
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 270
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9de69b548ab21ea498f210a06fcd75be
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 240
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4380abbb6d473514eb062abae01f15b5
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_8
+      name: tileKumatron 1_22
       rect:
         serializedVersion: 2
         x: 30
-        y: 240
+        y: 180
         width: 30
         height: 30
       alignment: 0
@@ -379,17 +717,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc584ce51e9d00b45b941d1894fa1156
+      spriteID: a5ade40b8d677e84db57e0d31a97f263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_9
+      name: tileKumatron 1_23
       rect:
         serializedVersion: 2
         x: 60
-        y: 240
+        y: 180
         width: 30
         height: 30
       alignment: 0
@@ -399,236 +737,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef1b65bfef34ad841b3a28a6445987f2
+      spriteID: 971a1221c1a6e2c4e9362098ecddaf62
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_10
+      name: tileKumatron 1_24
       rect:
         serializedVersion: 2
         x: 90
-        y: 240
+        y: 180
         width: 30
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: fb3477cf4d8391b4a94a01d5193edd51
+      spriteID: 0078d9d7e90163943a2d2e4998c02fb8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_11
+      name: tileKumatron 1_25
       rect:
         serializedVersion: 2
         x: 120
-        y: 240
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a09aea23e0ab1e40b35701a14d59444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_12
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 240
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80aabddb9c8390b4397b9a4062a64ad3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_13
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 240
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 410e4523e6d1136449db9454741fb64b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_14
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 210
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21caa3b92545b4a42bb370f7ceb412e0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_15
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 210
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ff3c5507ffe90546b1224ed5322ef5a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_16
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 210
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1975f49e9b3b9504a8541351feb4b0f9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_17
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 210
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab116b7547397094e91ada77a611e0e4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_18
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 210
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d04310f1aad526499f7a9fbf8121a31
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_19
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 210
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62b74e86c498c7a4497e0ac331cf3a53
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_20
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 210
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e1de908fda4a7d4e87a3d04dadfa54f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_21
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 180
         width: 30
         height: 30
@@ -638,98 +780,18 @@ TextureImporter:
       outline: []
       physicsShape:
       - - {x: -15, y: -15}
-        - {x: -15, y: 12}
-        - {x: 15, y: 12}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
         - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: b6ec6cbc17dc02c4186a6f0f4e363d3e
+      spriteID: 37b47d31fa7d5fb49b5d3a891b63655d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_22
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 180
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 727e6cf6349c85446ae5e3ea70e83cd3
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_23
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 180
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b416aeb49e1f9b45833ef9c150602d6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_24
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 180
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2adcee9be08622641bf57add232b2223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_25
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 180
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16a0a2e5978ae3c4fafc40b736f1f79a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tileKumatron_26
+      name: tileKumatron 1_26
       rect:
         serializedVersion: 2
         x: 150
@@ -740,16 +802,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 7a9f5a343a030834295f6971adb898b6
+      spriteID: a2b8c7af2a86a38499505f34912f3dbf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_27
+      name: tileKumatron 1_27
       rect:
         serializedVersion: 2
         x: 180
@@ -760,16 +826,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 23964c611bf5ea445ba334ec293d9a51
+      spriteID: a004f6206d1c9c84da058735713eff88
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_28
+      name: tileKumatron 1_28
       rect:
         serializedVersion: 2
         x: 0
@@ -780,16 +850,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: ee4acce07088b3f488a41ea3e07c16ac
+      spriteID: 7e4e0581b66f9ef4d8cc9b47dc33e7fd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_29
+      name: tileKumatron 1_29
       rect:
         serializedVersion: 2
         x: 30
@@ -800,16 +874,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 3152f694c5e41ed46b6ac0a6a3e10d68
+      spriteID: 44cdbd2b14560c44da2889194f3358f9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_30
+      name: tileKumatron 1_30
       rect:
         serializedVersion: 2
         x: 60
@@ -820,16 +898,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: b98a716a46735a549851d4581fe4b71c
+      spriteID: b42ddc53adb491c4b8aa9b265bcf2eec
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_31
+      name: tileKumatron 1_31
       rect:
         serializedVersion: 2
         x: 90
@@ -840,16 +922,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: -5}
+        - {x: 15, y: -5}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 09749cca5985e4548be0417334a95498
+      spriteID: e6c8a4a947a0f234aa1409dd6efbc023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_32
+      name: tileKumatron 1_32
       rect:
         serializedVersion: 2
         x: 0
@@ -863,13 +949,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f15f298f1202b914398526eee308e0f2
+      spriteID: a388a75f9e9faf84d96cddf89cda896a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_33
+      name: tileKumatron 1_33
       rect:
         serializedVersion: 2
         x: 30
@@ -883,13 +969,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1249e82b3a0d5bd4c84e7c919889bf2c
+      spriteID: 677ea4ca6cb6c9844b7a181a6a8ab7ba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_34
+      name: tileKumatron 1_34
       rect:
         serializedVersion: 2
         x: 60
@@ -903,13 +989,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 183170c3b70b08a42915ccf3203b623b
+      spriteID: 2d0dfc5c26bc7d44aa8cab0a3e5e9b01
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_35
+      name: tileKumatron 1_35
       rect:
         serializedVersion: 2
         x: 90
@@ -923,13 +1009,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73f3fbeb9e53e4f408fa7683e6c5448c
+      spriteID: 21f3fd6f790e4f1449e8fa6c5693b98b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_36
+      name: tileKumatron 1_36
       rect:
         serializedVersion: 2
         x: 120
@@ -940,16 +1026,60 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 0}
+        - {x: 15, y: 0}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 27e9afe639ff80745af78adcd15d3702
+      spriteID: 3196a270da6b9cc4e99298a59dbf01bb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_37
+      name: tileKumatron 1_37
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 120
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc8661f5c867a941bdb38f139ed9842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_38
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 120
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f11e3c9a6cf671469b5b3804ece7ec3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileKumatron 1_39
       rect:
         serializedVersion: 2
         x: 0
@@ -963,13 +1093,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3400e8d020d5484faff4b1d414ef4fb
+      spriteID: 5bb9c9791b5c49644b23e653985ede2c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_38
+      name: tileKumatron 1_40
       rect:
         serializedVersion: 2
         x: 30
@@ -983,13 +1113,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5a5f63f754037e42827e10047498957
+      spriteID: 368dfa1f235f3ff4c860e7629aa8b9cc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_39
+      name: tileKumatron 1_41
       rect:
         serializedVersion: 2
         x: 60
@@ -1003,13 +1133,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7602773eb262e1499904d9e642a0b12
+      spriteID: 048e1d1d4702fff47a6152a6b67f010a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_40
+      name: tileKumatron 1_42
       rect:
         serializedVersion: 2
         x: 90
@@ -1023,13 +1153,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5acf58be4498914286e4397d26c849b
+      spriteID: 4ffb9044bad238f4681dc7b7585b3208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_41
+      name: tileKumatron 1_43
       rect:
         serializedVersion: 2
         x: 120
@@ -1040,16 +1170,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 0}
+        - {x: 15, y: 0}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 10edd710e036b6b4ca7fcb1f7814bfeb
+      spriteID: 2e33fdc3185c16f4fa23afa419764c91
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_42
+      name: tileKumatron 1_44
       rect:
         serializedVersion: 2
         x: 150
@@ -1060,16 +1194,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 0}
+        - {x: 15, y: 0}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: b917469c9c637574097ae46144a3aeaa
+      spriteID: 757d134e7d9f21841a0412981fa1dba5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_43
+      name: tileKumatron 1_45
       rect:
         serializedVersion: 2
         x: 180
@@ -1080,16 +1218,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 0}
+        - {x: 15, y: 0}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 78e4f19dcc023624f9b007ba7b59ab97
+      spriteID: 78d26991628904e4184191e8bf1deb57
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_44
+      name: tileKumatron 1_46
       rect:
         serializedVersion: 2
         x: 0
@@ -1103,13 +1245,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cb170de2f531064cb1365e35fbfb3e4
+      spriteID: c76a37d445a99d242b8396a260571553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_45
+      name: tileKumatron 1_47
       rect:
         serializedVersion: 2
         x: 30
@@ -1120,16 +1262,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 14}
+        - {x: 15, y: 14}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 5681688df5f675142bda949d523ab4e4
+      spriteID: 4fe6230f10676634c8f1baa50bc4b588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_46
+      name: tileKumatron 1_48
       rect:
         serializedVersion: 2
         x: 60
@@ -1140,16 +1286,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 14}
+        - {x: 15, y: 14}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 9ce554687c6f0f341a7d2c9794b97dae
+      spriteID: 1de42e9b18e33744dbc3ee5e8241e399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_47
+      name: tileKumatron 1_49
       rect:
         serializedVersion: 2
         x: 90
@@ -1160,16 +1310,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 14}
+        - {x: 15, y: 14}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: fded0bb67c6c59f48a7e4ac68bd59285
+      spriteID: 4f501cf388a0ba44b8be11da3dfcb459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_48
+      name: tileKumatron 1_50
       rect:
         serializedVersion: 2
         x: 120
@@ -1180,16 +1334,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 14}
+        - {x: 15, y: 14}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 02e19fd845961dc43b7c177c0999a0b2
+      spriteID: 0a2ca9557c663164ea02fb50f2eb58f7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_49
+      name: tileKumatron 1_51
       rect:
         serializedVersion: 2
         x: 150
@@ -1200,16 +1358,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 5}
+        - {x: 15, y: 5}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: bb08ac5a8c68cfb4e824d734e483ec8d
+      spriteID: cf5a04631597e6f47b5e0d3b8df98aea
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_50
+      name: tileKumatron 1_52
       rect:
         serializedVersion: 2
         x: 180
@@ -1220,16 +1382,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 5}
+        - {x: 15, y: 5}
+        - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: d1f4eaf3e08af1148ac3495b7e8ef0ba
+      spriteID: 5b7e8e78dd35fa94099c7bacfb085350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_51
+      name: tileKumatron 1_53
       rect:
         serializedVersion: 2
         x: 0
@@ -1240,16 +1406,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -5}
+        - {x: -15, y: 15}
+        - {x: 15, y: 15}
+        - {x: 15, y: -5}
       tessellationDetail: 0
       bones: []
-      spriteID: 3fc4f0743d58eef45a7f4be49f853592
+      spriteID: 1bd655af189405a40bac5bf1d1b5ec1b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_52
+      name: tileKumatron 1_54
       rect:
         serializedVersion: 2
         x: 30
@@ -1260,16 +1430,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -5}
+        - {x: -15, y: 15}
+        - {x: 15, y: 15}
+        - {x: 15, y: -5}
       tessellationDetail: 0
       bones: []
-      spriteID: 43e097d3db34ce14cb9cbedb1fbc9ebc
+      spriteID: 60844237c01f8b84a8786a1f312abef6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_53
+      name: tileKumatron 1_55
       rect:
         serializedVersion: 2
         x: 60
@@ -1280,16 +1454,20 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -15, y: -5}
+        - {x: -15, y: 15}
+        - {x: 14, y: 15}
+        - {x: 15, y: -5}
       tessellationDetail: 0
       bones: []
-      spriteID: 11c1ddc92597cad4c9388f2e087efcfd
+      spriteID: 208909260423daa469de4c89a0ab91c4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_54
+      name: tileKumatron 1_56
       rect:
         serializedVersion: 2
         x: 90
@@ -1303,13 +1481,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 822ebded9ab68b545bc8f75b6c38f994
+      spriteID: 26ce6e63df3425040951f6f39eca7827
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_55
+      name: tileKumatron 1_57
       rect:
         serializedVersion: 2
         x: 120
@@ -1323,13 +1501,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c1313a1e848d1a468c3075206a986f2
+      spriteID: 564022559e816d74abfdc391276dd848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_56
+      name: tileKumatron 1_58
       rect:
         serializedVersion: 2
         x: 150
@@ -1343,13 +1521,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57bf4bb6b9b4e814eace5bcac351d3fd
+      spriteID: 5f770c68f31bcd747b388326d8beb1ce
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_57
+      name: tileKumatron 1_59
       rect:
         serializedVersion: 2
         x: 180
@@ -1363,13 +1541,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6b4369a8eb27ee41b3021478573b756
+      spriteID: 40b13d07636345042a6382cf43d724b4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_58
+      name: tileKumatron 1_60
       rect:
         serializedVersion: 2
         x: 0
@@ -1387,13 +1565,13 @@ TextureImporter:
         - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 8afbb293e67a4aa4fb497897eb5ee4a6
+      spriteID: 0f0c0b436cf35c94986aead65b6c2ea0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_59
+      name: tileKumatron 1_61
       rect:
         serializedVersion: 2
         x: 30
@@ -1411,13 +1589,13 @@ TextureImporter:
         - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 004138a483763144494583f4cf11a8a6
+      spriteID: edfe9864e87f8bd42a9cae79f8a75bd8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_60
+      name: tileKumatron 1_62
       rect:
         serializedVersion: 2
         x: 60
@@ -1435,13 +1613,13 @@ TextureImporter:
         - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 86b7578f857e17a40a046f9420cba5d8
+      spriteID: f90b436cd84032446b2a4820d61930de
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_61
+      name: tileKumatron 1_63
       rect:
         serializedVersion: 2
         x: 90
@@ -1459,13 +1637,13 @@ TextureImporter:
         - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: 4d35f2520e46465428643fdd9555c4ae
+      spriteID: 00d677dd77cbc174a9a6a62c2da9b7ed
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_62
+      name: tileKumatron 1_64
       rect:
         serializedVersion: 2
         x: 120
@@ -1483,13 +1661,13 @@ TextureImporter:
         - {x: 15, y: -15}
       tessellationDetail: 0
       bones: []
-      spriteID: e2787a6160c1eca4e91e9a84abe21a1d
+      spriteID: 9cee5b0eeeb869149875c0e191f33c6b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_63
+      name: tileKumatron 1_65
       rect:
         serializedVersion: 2
         x: 150
@@ -1503,13 +1681,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e49ddbd40a8526d46a95a0d76562e3ca
+      spriteID: 2a90196c38552d04293b32044b4d285e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileKumatron_64
+      name: tileKumatron 1_66
       rect:
         serializedVersion: 2
         x: 180
@@ -1523,7 +1701,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddbe2d903dab3dc4498471d773bb545a
+      spriteID: 981f0713058a54148a72b127a5ca138c
       vertices: []
       indices: 
       edges: []
@@ -1531,7 +1709,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d72bbac1fb26d4745b924abef2c505e3
+    spriteID: bca1d6669e809ea4e893aa00197f5d04
     vertices: []
     indices: 
     edges: []
