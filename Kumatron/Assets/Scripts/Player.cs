@@ -31,9 +31,8 @@ public class Player : MonoBehaviour
     public float playerHP = 5;
     [SerializeField]
     private GameObject _explosion;
-
-
-
+    [SerializeField]
+    private AudioClip _damagePlayer, _dashPlayer;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -161,11 +160,13 @@ public class Player : MonoBehaviour
                 {
                     Instantiate(_explosion, this.transform.position, Quaternion.identity);
                     rb.AddForce(Vector2.left * 15, ForceMode2D.Impulse);
+                    DamagePlayerSound();
                 }
                 else if (other.gameObject.transform.position.x < this.gameObject.transform.position.x)
                 {
                     Instantiate(_explosion, this.transform.position, Quaternion.identity);
                     rb.AddForce(Vector2.right * 15, ForceMode2D.Impulse);
+                    DamagePlayerSound();
                 }
             }
             StartCoroutine(PlayerCanMoveAgain());
@@ -350,7 +351,15 @@ public class Player : MonoBehaviour
             triangleShoot = other.gameObject.GetComponent<TriangleShoot>();
             triangleShoot.DestroyingShootAnimation();
             playerHP--;
+            DamagePlayerSound();
         }
     }
-
+    private void DamagePlayerSound()
+    {
+        AudioSource.PlayClipAtPoint(_damagePlayer, Camera.main.transform.position);
+    }
+    public void BullDashSound()
+    {  
+            AudioSource.PlayClipAtPoint(_dashPlayer, Camera.main.transform.position);
+    }
 }

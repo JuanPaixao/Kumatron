@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
     public Animator animalWithPlayer;
+    [SerializeField]
+    private Player _player;
 
     void Awake()
     {
         animalWithPlayer = GetComponent<Animator>();
-
     }
     public void StartIdleAnimation_Chicken()
     {
@@ -51,6 +52,13 @@ public class PlayerAnimations : MonoBehaviour
         if (animalWithPlayer != null)
         {
             animalWithPlayer.SetBool("isDashing", false);
+        }
+    }
+    public void PlayBullSound()
+    {
+        if (_player != null && animalWithPlayer != null)
+        {
+            _player.BullDashSound();
         }
     }
     public void StartIdleAnimation_Cow()

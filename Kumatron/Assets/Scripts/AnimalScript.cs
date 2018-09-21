@@ -27,6 +27,7 @@ public class AnimalScript : MonoBehaviour
     private bool _isWalking;
     public bool caged;
     public bool chased;
+
     void Start()
     {
         if (this.gameObject.name == "Chicken")

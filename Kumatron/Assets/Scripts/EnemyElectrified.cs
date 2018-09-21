@@ -6,8 +6,12 @@ public class EnemyElectrified : MonoBehaviour
 {
     private Animator _enemyAnimator;
     public bool electrified = false;
+    [SerializeField]
+    private AudioClip[] _electrifiedSounds;
+    private AudioSource _audioSource;
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         _enemyAnimator = GetComponent<Animator>();
     }
 
@@ -18,11 +22,16 @@ public class EnemyElectrified : MonoBehaviour
     }
     public void stopElectrified()
     {
-        electrified = false;
         _enemyAnimator.SetBool("isElectrified", false);
+        electrified = false;
     }
-    void OnParticleCollision(GameObject other)
+    private void OnParticleCollision(GameObject other)
     {
         isElectrified();
+    }
+    private void ElectrifiedSound()
+    {
+        int electrifiedSound = Random.Range(0, 4);
+        _audioSource.PlayOneShot(_electrifiedSounds[electrifiedSound], 1f);
     }
 }

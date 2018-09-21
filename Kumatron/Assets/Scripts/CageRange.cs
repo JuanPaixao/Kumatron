@@ -26,7 +26,7 @@ public class CageRange : MonoBehaviour
     private Enemy _enemy;
     private EnemyElectrified _enemyElectrified;
     private RaycastHit2D _leftHit, _rightHit;
-    private LayerMask _layerMask = 1 << 9;
+    private LayerMask _layerMask = 1 << 10;
     private bool _electrified;
     void Start()
     {
@@ -94,7 +94,6 @@ public class CageRange : MonoBehaviour
                         closetAnimal = _animalTarget;
                         distance = currentDistance;
                         hasTarget = true;
-                        Debug.Log(closetAnimal.name + distance);
                     }
                 }
             }
@@ -111,7 +110,7 @@ public class CageRange : MonoBehaviour
         _rightHit = Physics2D.Raycast(_enemy.RightDetection.position, Vector2.zero, 0, ~_layerMask);
         if (_leftHit.collider == true || _rightHit.collider == true && _withAnimal == true)
         {
-            _rb.AddForce(Vector2.up * 300);
+            _rb.AddForce(Vector2.up * 325);
         }
     }
     private IEnumerator CircleEnemyCoroutine()
@@ -126,7 +125,7 @@ public class CageRange : MonoBehaviour
     {
         _rb.MovePosition(this.transform.position);
         _rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.35f);
         _withAnimal = true;
     }
     private void CircleMovement()

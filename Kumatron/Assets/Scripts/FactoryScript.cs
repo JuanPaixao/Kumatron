@@ -26,8 +26,7 @@ public class FactoryScript : MonoBehaviour
     {
         if (_factoryHP <= 0)
         {
-            Instantiate(_explosion, this.transform.position, Quaternion.identity);
-            Destroy(this.gameObject, 0.1f);
+			StartCoroutine(DestroyCoroutine());
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
@@ -44,5 +43,11 @@ public class FactoryScript : MonoBehaviour
     private void OnDestroy()
     {
         _gameManager.FactoryDestroyed();
+    }
+    private IEnumerator DestroyCoroutine()
+    {
+        yield return new WaitForSeconds(0.05f);
+        Instantiate(_explosion, this.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
     }
 }

@@ -58,45 +58,27 @@ public class SquareEnemy : MonoBehaviour
                 if (_player.transform.position.x > this.transform.position.x)
                 {
                     SetDashRight();
-                    _rb.AddForce(Vector2.right * _dashSpeed);
+                    _rb.AddForce(Vector2.right * _dashSpeed * Time.deltaTime);
                     StartCoroutine(DashTimeOff());
                 }
                 else if (_player.transform.position.x < this.transform.position.x)
                 {
                     SetDashLeft();
-                    _rb.AddForce(Vector2.left * _dashSpeed);
+                    _rb.AddForce(Vector2.left * _dashSpeed * Time.deltaTime);
                     StartCoroutine(DashTimeOff());
                 }
             }
         }
     }
-    public void CheckPosition()
-    {
-        if (enemyDashing == true)
-        {
-            if (_player.transform.position.x > this.transform.position.x)
-            {
-                SetDashRight();
-                _rb.AddForce(Vector2.right * _dashSpeed);
-                StartCoroutine(DashTimeOff());
-            }
-            else if (_player.transform.position.x < this.transform.position.x)
-            {
-                SetDashLeft();
-                _rb.AddForce(Vector2.left * _dashSpeed);
-                StartCoroutine(DashTimeOff());
-            }
-        }
-    }
     private IEnumerator DashTimeOff()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.5f);
         enemyDashing = false;
         SetIdle();
     }
     private IEnumerator DashTimeOn()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(2.0f);
         enemyDashing = true;
     }
     private void SetIdle()
