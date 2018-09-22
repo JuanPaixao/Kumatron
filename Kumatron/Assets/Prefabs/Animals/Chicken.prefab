@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1500740234684890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.91, y: -0.02000004, z: 10}
+  m_LocalPosition: {x: 8.865, y: -0.02000004, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4399946598923154}
@@ -206,8 +206,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: ebd8f89200ef97e47855f005d845af37, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -217,7 +217,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 100
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -252,7 +252,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -322,6 +322,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chickenAnimator: {fileID: 95409368763798564}
+  _chickenSound: {fileID: 8300000, guid: ebd8f89200ef97e47855f005d845af37, type: 3}
+  _chickenSoundRooster: {fileID: 8300000, guid: fba190bcf7baab44aa621137704cc2ed,
+    type: 3}
 --- !u!114 &114962453713153262
 MonoBehaviour:
   m_ObjectHideFlags: 1

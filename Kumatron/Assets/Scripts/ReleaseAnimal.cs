@@ -18,7 +18,6 @@ public class ReleaseAnimal : MonoBehaviour
             if (_player.animalWithMe == "Chicken")
             {
                 Instantiate(animals[0], this.transform.position, Quaternion.identity);
-                Debug.Log("Throwing the " + _player.animalWithMe);
                 _player.animalWithMe = null;
                 _player.withAnimal = false;
                 _player.animalPowerUp[0].SetActive(false);
@@ -27,7 +26,6 @@ public class ReleaseAnimal : MonoBehaviour
             else if (_player.animalWithMe == "Bull")
             {
                 Instantiate(animals[1], this.transform.position, Quaternion.identity);
-                Debug.Log("Throwing the " + _player.animalWithMe);
                 _player.animalWithMe = null;
                 _player.withAnimal = false;
                 _player.animalPowerUp[1].SetActive(false);
@@ -36,7 +34,6 @@ public class ReleaseAnimal : MonoBehaviour
             else if (_player.animalWithMe == "Cow")
             {
                 Instantiate(animals[2], this.transform.position, Quaternion.identity);
-                Debug.Log("Throwing the " + _player.animalWithMe);
                 _player.animalWithMe = null;
                 _player.withAnimal = false;
                 _player.animalPowerUp[2].SetActive(false);

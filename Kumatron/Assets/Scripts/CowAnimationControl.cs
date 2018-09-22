@@ -6,6 +6,8 @@ public class CowAnimationControl : MonoBehaviour
 {
 
     public Animator cowAnimator;
+    [SerializeField]
+    private AudioClip _cowSound;
     void Start()
     {
         cowAnimator = GetComponent<Animator>();
@@ -23,5 +25,9 @@ public class CowAnimationControl : MonoBehaviour
     public void CowIsAbducting(bool abducting)
     {
         cowAnimator.SetBool("isAbducting", abducting);
+    }
+    public void PlayCowSound()
+    {
+        AudioSource.PlayClipAtPoint(_cowSound, this.transform.position);
     }
 }

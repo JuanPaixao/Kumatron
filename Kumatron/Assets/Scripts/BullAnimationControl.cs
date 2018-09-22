@@ -6,6 +6,8 @@ public class BullAnimationControl : MonoBehaviour
 {
 
     public Animator bullAnimator;
+    [SerializeField]
+    private AudioClip _bullSound;
     void Start()
     {
         bullAnimator = GetComponent<Animator>();
@@ -23,5 +25,8 @@ public class BullAnimationControl : MonoBehaviour
     public void BullIsAbducting(bool abducting)
     {
         bullAnimator.SetBool("isAbducting", abducting);
+    }
+    public void PlayBullSound(){
+        AudioSource.PlayClipAtPoint(_bullSound,this.transform.position);
     }
 }

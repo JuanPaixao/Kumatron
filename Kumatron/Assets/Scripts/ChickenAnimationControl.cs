@@ -6,6 +6,10 @@ public class ChickenAnimationControl : MonoBehaviour
 {
 
     public Animator chickenAnimator;
+    [SerializeField]
+    private AudioClip _chickenSound;
+    [SerializeField]
+    private AudioClip _chickenSoundRooster;
     void Start()
     {
         chickenAnimator = GetComponent<Animator>();
@@ -24,5 +28,13 @@ public class ChickenAnimationControl : MonoBehaviour
     public void ChickenIsFalling(bool falling)
     {
         chickenAnimator.SetBool("isFalling", falling);
+    }
+    public void PlayChikenSound()
+    {
+        AudioSource.PlayClipAtPoint(_chickenSound, this.transform.position);
+    }
+    public void PlayChikenSoundRooster()
+    {
+        AudioSource.PlayClipAtPoint(_chickenSoundRooster, this.transform.position);
     }
 }

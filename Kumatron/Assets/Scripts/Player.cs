@@ -28,13 +28,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Animator _animator;
     public bool isDashing, isMoving;
-    public float playerHP = 5;
+    public int playerHP;
     [SerializeField]
     private GameObject _explosion;
     [SerializeField]
     private AudioClip _damagePlayer, _dashPlayer;
+    private UIManager _uiManager;
     void Start()
     {
+        _uiManager = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
         rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _auxSpeed = _playerSpeed;
@@ -60,6 +62,10 @@ public class Player : MonoBehaviour
         {
             rb.mass = 1;
         }
+        if (withAnimal == true)
+        {
+            CheckAnimal();
+        }
     }
 
 
@@ -75,6 +81,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && withAnimal == true && rayFinished == true)
         {
             _releaseAnimal.ReleasePlayerAnimal();
+            _uiManager.CheckAnimal(animalWithMe);
             _animator.SetBool("isMovingLeft", false);
             _animator.SetBool("isMovingRight", false);
             _animator.SetBool("isMovingDown", false);
@@ -177,6 +184,7 @@ public class Player : MonoBehaviour
     {
         if (withAnimal == false && rayFinished == true)
         {
+
             _kumatronRay.SetActive(true);
             withAnimal = true;
             animalWithMe = animalName;
@@ -357,9 +365,14 @@ public class Player : MonoBehaviour
     private void DamagePlayerSound()
     {
         AudioSource.PlayClipAtPoint(_damagePlayer, Camera.main.transform.position);
+        _uiManager.UpdateColor(playerHP);
     }
     public void BullDashSound()
-    {  
-            AudioSource.PlayClipAtPoint(_dashPlayer, Camera.main.transform.position);
+    {
+        AudioSource.PlayClipAtPoint(_dashPlayer, Camera.main.transform.position);
+    }
+    private void CheckAnimal()
+    {
+        _uiManager.CheckAnimal(animalWithMe);
     }
 }

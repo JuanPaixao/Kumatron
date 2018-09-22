@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3caf949e5fd277d4a809cca1394c0e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSpeed: 5
+  _playerSpeed: 4
   _auxSpeed: 0
   _cowSpeed: 0
   withAnimal: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   _animator: {fileID: 95529907253462716}
   isDashing: 0
   isMoving: 0
-  playerHP: 5
+  playerHP: 4
   _explosion: {fileID: 1689343271267804, guid: 72c7b310e549cd740bcb23072302ba37, type: 2}
   _damagePlayer: {fileID: 8300000, guid: 0bd79c7d481b6aa4da8bd124be1148b4, type: 3}
   _dashPlayer: {fileID: 8300000, guid: 6831e9b340df88d48b3f4bdb0b85aee3, type: 3}
