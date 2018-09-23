@@ -27,26 +27,30 @@ public class Player : MonoBehaviour
     private AbduptionRange abduptionRange;
     [SerializeField]
     private Animator _animator;
-    public bool isDashing, isMoving;
+    public bool isDashing, isMoving, isDefeated;
     public int playerHP;
     [SerializeField]
     private GameObject _explosion;
     [SerializeField]
     private AudioClip _damagePlayer, _dashPlayer;
     private UIManager _uiManager;
+    private GameManager _gameManager;
+
     void Start()
     {
+        _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         _uiManager = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
         rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _auxSpeed = _playerSpeed;
         _cowSpeed = _playerSpeed * 1.5f;
+        isDefeated = false;
     }
     void Update()
     {
         PlayerAttack();
         MovementAnimationsControl();
-        if (playerHP < 0)
+        if (playerHP <= 0 && isDefeated == false)
         {
             PlayerDefeated();
         }
@@ -65,6 +69,10 @@ public class Player : MonoBehaviour
         if (withAnimal == true)
         {
             CheckAnimal();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _gameManager.LoadMenu();
         }
     }
 
@@ -159,20 +167,22 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy") && other.gameObject.name == "SquareEnemy" && rayFinished == true && isDashing == false)
         {
             SquareEnemy squareEnemy = other.gameObject.GetComponent<SquareEnemy>();
-            playerHP--;
-            playerCanMove = false;
-            if (squareEnemy != null && squareEnemy.enemyDashing == true)
+            if (squareEnemy != null && squareEnemy.enemyDashing == true && playerHP > 0)
             {
                 if (other.gameObject.transform.position.x >= this.gameObject.transform.position.x)
                 {
+                    playerHP--;
+                    playerCanMove = false;
                     Instantiate(_explosion, this.transform.position, Quaternion.identity);
-                    rb.AddForce(Vector2.left * 15, ForceMode2D.Impulse);
+                    rb.AddForce(Vector2.left * 22, ForceMode2D.Impulse);
                     DamagePlayerSound();
                 }
                 else if (other.gameObject.transform.position.x < this.gameObject.transform.position.x)
                 {
+                    playerHP--;
+                    playerCanMove = false;
                     Instantiate(_explosion, this.transform.position, Quaternion.identity);
-                    rb.AddForce(Vector2.right * 15, ForceMode2D.Impulse);
+                    rb.AddForce(Vector2.right * 22, ForceMode2D.Impulse);
                     DamagePlayerSound();
                 }
             }
@@ -312,7 +322,12 @@ public class Player : MonoBehaviour
 
     private void PlayerDefeated()
     {
-
+        if (playerHP <= 0)
+        {
+            isDefeated = true;
+            Instantiate(_explosion, this.transform.position, Quaternion.identity);
+            Destroy(this.gameObject, 0.25f);
+        }
     }
 
 
@@ -322,7 +337,7 @@ public class Player : MonoBehaviour
         {
             rb.velocity = new Vector2(dashSpeed, 0);
             playerCanMove = false;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.25f);
             playerAnimations[1].AttackAnimationStop_Bull();
             _animator.SetBool("isDashing", false);
             isDashing = false;
@@ -337,7 +352,7 @@ public class Player : MonoBehaviour
         {
             rb.velocity = new Vector2(-dashSpeed, 0);
             playerCanMove = false;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.25f);
             playerAnimations[1].AttackAnimationStop_Bull();
             _animator.SetBool("isDashingLeft", false);
             isDashing = false;
@@ -354,7 +369,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         TriangleShoot triangleShoot;
-        if (other.gameObject.CompareTag("Enemy_Shoot"))
+        if (other.gameObject.CompareTag("Enemy_Shoot") && playerHP > 0)
         {
             triangleShoot = other.gameObject.GetComponent<TriangleShoot>();
             triangleShoot.DestroyingShootAnimation();

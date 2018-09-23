@@ -16,16 +16,22 @@ public class ScrollingBackground : MonoBehaviour
         {
             _speed = 1;
         }
-        _lastPlayerPosX = _player.position.x;
+        if (_player != null)
+        {
+            _lastPlayerPosX = _player.position.x;
+        }
     }
     void Update()
     {
-		Parallax();
+        if (_player != null)
+        {
+            Parallax();
+        }
     }
     private void Parallax()
     {
+
         transform.Translate((_player.position.x - _lastPlayerPosX) / _speed, 0, 0);
         _lastPlayerPosX = _player.position.x;
-
     }
 }

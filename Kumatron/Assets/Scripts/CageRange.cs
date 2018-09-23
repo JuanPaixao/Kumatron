@@ -24,8 +24,10 @@ public class CageRange : MonoBehaviour
     private Transform _exitPosition;
     [SerializeField]
     private Enemy _enemy;
+    public Transform downLeftHitCollider;
+    public Transform downRightHitCollider;
     private EnemyElectrified _enemyElectrified;
-    private RaycastHit2D _leftHit, _rightHit;
+    private RaycastHit2D _leftHit, _rightHit, _downLeftHit, _downRightHit;
     private LayerMask _layerMask = 1 << 10;
     private bool _electrified;
     void Start()
@@ -108,9 +110,14 @@ public class CageRange : MonoBehaviour
     {
         _leftHit = Physics2D.Raycast(_enemy.LeftDetection.position, Vector2.zero, 0, ~_layerMask);
         _rightHit = Physics2D.Raycast(_enemy.RightDetection.position, Vector2.zero, 0, ~_layerMask);
-        if (_leftHit.collider == true || _rightHit.collider == true && _withAnimal == true)
+        if (_withAnimal == true)
         {
-            _rb.AddForce(Vector2.up * 325);
+            _downLeftHit = Physics2D.Raycast(downLeftHitCollider.position, Vector2.zero, 0, ~_layerMask);
+            _downRightHit = Physics2D.Raycast(downRightHitCollider.position, Vector2.zero, 0, ~_layerMask);
+        }
+        if (_leftHit.collider == true || _rightHit.collider == true || _downRightHit.collider == true || _downLeftHit.collider == true && _withAnimal == true)
+        {
+            _rb.AddForce(Vector2.up * 1500);
         }
     }
     private IEnumerator CircleEnemyCoroutine()
@@ -134,7 +141,7 @@ public class CageRange : MonoBehaviour
         {
             if (closetAnimal != null)
             {
-                Vector2 capturePosition = new Vector2(closetAnimal.transform.position.x, closetAnimal.transform.position.y + 1.354f);
+                Vector2 capturePosition = new Vector2(closetAnimal.transform.position.x, closetAnimal.transform.position.y + 1.350f);
                 _rb.MovePosition(Vector2.MoveTowards(this.transform.position, capturePosition, _speed * Time.deltaTime));
             }
         }
@@ -142,6 +149,14 @@ public class CageRange : MonoBehaviour
         {
             Vector2 exitPosition = _exitPosition.transform.position;
             _rb.MovePosition(Vector2.MoveTowards(this.transform.position, exitPosition, _speed * Time.deltaTime));
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Exit") && _withAnimal == true)
+        {
+            Destroy(gameObject, 2f);
         }
     }
 }

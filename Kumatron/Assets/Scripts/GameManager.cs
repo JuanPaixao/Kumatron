@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
     public bool gameOver = false;
-    private GameObject[] _factories;
-    public int factoryHP;
+    private GameObject[] _factories, _chickens, _bulls, _cows;
+    public int factoryHP, chickenNumber, bullNumber, cowNumber;
     void Start()
     {
         _factories = GameObject.FindGameObjectsWithTag("Factory");
@@ -19,15 +20,46 @@ public class GameManager : MonoBehaviour
                 factoryHP++;
             }
         }
-
     }
-    void Update()
+    public void LoadGame()
     {
-
+        SceneManager.LoadScene("Stage_1");
     }
-
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
     public void FactoryDestroyed()
     {
         factoryHP--;
     }
+    public void AnimalsNumbers()
+    {
+        _chickens = GameObject.FindGameObjectsWithTag("Chicken");
+        foreach (GameObject _chicken in _chickens)
+        {
+            if (_chickens != null)
+            {
+                chickenNumber = _chickens.Length;
+            }
+        }
+        _bulls = GameObject.FindGameObjectsWithTag("Bull");
+        foreach (GameObject _bull in _bulls)
+        {
+            if (_bulls != null)
+            {
+                bullNumber = _bulls.Length;
+            }
+        }
+
+        _cows = GameObject.FindGameObjectsWithTag("Cow");
+        foreach (GameObject _cow in _cows)
+        {
+            if (_cows != null)
+            {
+                cowNumber = _cows.Length;
+            }
+        }
+    }
 }
+

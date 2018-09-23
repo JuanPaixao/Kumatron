@@ -32,7 +32,7 @@ public class AnimalScript : MonoBehaviour
     {
         if (this.gameObject.name == "Chicken")
         {
-            randomMoveTime = Random.Range(3.32f, 7);
+            randomMoveTime = Random.Range(5f, 9);
         }
         else if (this.gameObject.name == "Bull")
         {
@@ -78,6 +78,10 @@ public class AnimalScript : MonoBehaviour
         if (other.CompareTag("Ray"))
         {
             StartCoroutine(AnimalAbducted());
+        }
+        if (other.CompareTag("Exit") && caged == true)
+        {
+            Destroy(gameObject,1.5f);
         }
     }
     private void Walk()
@@ -169,7 +173,7 @@ public class AnimalScript : MonoBehaviour
                 {
                     _isWalking = !_isWalking;
                     _rb.AddForce(Vector2.up * 20, ForceMode2D.Impulse);
-                    _rb.AddForce(Vector2.right * 20, ForceMode2D.Impulse);
+                    _rb.AddForce(Vector2.right * 1000);
                     _movingRight = false;
                     transform.eulerAngles = new Vector2(0, 0);
                     _animalSpeed = -_animalSpeed;
@@ -179,7 +183,7 @@ public class AnimalScript : MonoBehaviour
                 {
                     _isWalking = !_isWalking;
                     _rb.AddForce(Vector2.up * 20, ForceMode2D.Impulse);
-                    _rb.AddForce(Vector2.left * -20, ForceMode2D.Impulse);
+                    _rb.AddForce(Vector2.right * 1000);
                     _movingRight = true;
                     transform.eulerAngles = new Vector2(0, 180);
                     _animalSpeed = -_animalSpeed;

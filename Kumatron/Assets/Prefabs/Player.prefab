@@ -187,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795575782663494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.1, y: 1.87, z: 0}
+  m_LocalPosition: {x: 6.839921, y: -1.5051008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4329326300245266}
@@ -527,8 +527,9 @@ MonoBehaviour:
   _animator: {fileID: 95529907253462716}
   isDashing: 0
   isMoving: 0
+  isDefeated: 0
   playerHP: 4
-  _explosion: {fileID: 1689343271267804, guid: 72c7b310e549cd740bcb23072302ba37, type: 2}
+  _explosion: {fileID: 1731576580359776, guid: dba92509bbf63c84f9a2116c73b1cc79, type: 2}
   _damagePlayer: {fileID: 8300000, guid: 0bd79c7d481b6aa4da8bd124be1148b4, type: 3}
   _dashPlayer: {fileID: 8300000, guid: 6831e9b340df88d48b3f4bdb0b85aee3, type: 3}
 --- !u!114 &114766915202750992

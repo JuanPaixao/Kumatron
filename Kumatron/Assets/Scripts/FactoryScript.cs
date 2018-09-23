@@ -17,7 +17,7 @@ public class FactoryScript : MonoBehaviour
     }
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
 
@@ -26,7 +26,7 @@ public class FactoryScript : MonoBehaviour
     {
         if (_factoryHP <= 0)
         {
-			StartCoroutine(DestroyCoroutine());
+            StartCoroutine(DestroyCoroutine());
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
