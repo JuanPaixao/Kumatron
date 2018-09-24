@@ -214,7 +214,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4418803199636044, guid: 2942a63a6e1e41244b11dd50fe0554ab, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.92
+      value: -6.41
       objectReference: {fileID: 0}
     - target: {fileID: 4418803199636044, guid: 2942a63a6e1e41244b11dd50fe0554ab, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3089,7 +3089,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4964981699356476, guid: 20c12647f49ed6c4f8f7b88d47e8e316, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.36
+      value: 9.95
       objectReference: {fileID: 0}
     - target: {fileID: 4964981699356476, guid: 20c12647f49ed6c4f8f7b88d47e8e316, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3855,7 +3855,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.3648405, y: -1.2082503, z: -9.963466}
+  m_LocalPosition: {x: -6.3624973, y: -1.2082403, z: -9.963466}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1860007866}
@@ -4464,6 +4464,10 @@ Prefab:
       propertyPath: _kumatronRay
       value: 
       objectReference: {fileID: 1023791509}
+    - target: {fileID: 4093883388622608, guid: 0d1ae44ed36871640b5ccb4b1eebcd26, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d1ae44ed36871640b5ccb4b1eebcd26, type: 2}
   m_IsPrefabAsset: 0
@@ -5571,7 +5575,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4652203737263718, guid: edcbf807a27fa3e4ba8e1ca5644a6916, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10.94
+      value: -1.39
       objectReference: {fileID: 0}
     - target: {fileID: 4652203737263718, guid: edcbf807a27fa3e4ba8e1ca5644a6916, type: 2}
       propertyPath: m_LocalPosition.y

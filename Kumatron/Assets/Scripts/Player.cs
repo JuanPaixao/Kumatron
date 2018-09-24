@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _auxSpeed = _playerSpeed;
-        _cowSpeed = _playerSpeed * 1.5f;
+        _cowSpeed = _playerSpeed * 1.8f;
         isDefeated = false;
     }
     void Update()
@@ -136,10 +136,12 @@ public class Player : MonoBehaviour
         if (animalWithMe == "Cow")
         {
             _playerSpeed = _cowSpeed;
+            _animator.SetBool("withCow", true);
         }
         else
         {
             _playerSpeed = _auxSpeed;
+            _animator.SetBool("withCow", false);
         }
 
 
