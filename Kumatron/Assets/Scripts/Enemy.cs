@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
-    [SerializeField]
-    private int _enemyHP;
+    public int enemyHP;
     private Player _player;
     [SerializeField]
     private GameObject _enemyExplosion;
@@ -22,7 +20,7 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        if (_enemyHP <= 0)
+        if (enemyHP <= 0)
         {
             Instantiate(_enemyExplosion, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
@@ -34,11 +32,11 @@ public class Enemy : MonoBehaviour
         {
             if (other.gameObject.CompareTag("Player") && _player.isDashing == true)
             {
-                _enemyHP -= 2;
+                enemyHP -= 3;
             }
             else if (other.gameObject.CompareTag("Egg"))
             {
-                _enemyHP--;
+                enemyHP -= 2;
             }
         }
     }

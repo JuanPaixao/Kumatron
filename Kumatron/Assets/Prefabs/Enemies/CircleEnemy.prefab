@@ -826,7 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1271f9d658e50e04d9d42211af64aa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHP: 2
+  enemyHP: 3
   _enemyExplosion: {fileID: 1689343271267804, guid: 72c7b310e549cd740bcb23072302ba37,
     type: 2}
   rb: {fileID: 0}

@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285506015097926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.79, y: 2.9183362, z: 0}
+  m_LocalPosition: {x: 19.67, y: 1.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1271f9d658e50e04d9d42211af64aa18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHP: 2
+  enemyHP: 3
   _enemyExplosion: {fileID: 1346925560943860, guid: 6df17b1cc561a2b4883a7e29528d41b2,
     type: 2}
   rb: {fileID: 50684325495033734}

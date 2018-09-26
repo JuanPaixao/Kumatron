@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
 
     [SerializeField]
-    private float _playerSpeed, _auxSpeed, _cowSpeed;
+    private float _playerSpeed, _auxSpeed, _cowSpeed, horizontalMovement, verticalMovement;
     public bool withAnimal = false;
     public bool rayFinished = true;
     [SerializeField]
@@ -49,7 +50,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerAttack();
+
+#if UNITY_ANDROID
+        AndroidAnimationsControl();
+#else
         MovementAnimationsControl();
+#endif
+
+
         if (playerHP <= 0 && isDefeated == false)
         {
             PlayerDefeated();
@@ -86,6 +94,30 @@ public class Player : MonoBehaviour
     }
     private void PlayerAttack()
     {
+#if UNITY_ANDROID
+        if (CrossPlatformInputManager.GetButtonDown("RayButton") && withAnimal == true && rayFinished == true)
+        {
+            _releaseAnimal.ReleasePlayerAnimal();
+            _uiManager.CheckAnimal(animalWithMe);
+            _animator.SetBool("isMovingLeft", false);
+            _animator.SetBool("isMovingRight", false);
+            _animator.SetBool("isMovingDown", false);
+        }
+        if (CrossPlatformInputManager.GetButtonDown("XButton") && Time.time > _cooldown)
+        {
+            _releaseAnimal.Attack();
+            _cooldown = Time.time + _nextTime;
+
+            if (animalWithMe == "Chicken")
+            {
+                playerAnimations[0].AttackAnimationPlay_Chicken();
+            }
+            else if (animalWithMe == "Bull")
+            {
+                playerAnimations[1].AttackAnimationPlay_Bull();
+            }
+        }
+#else
         if (Input.GetKeyDown(KeyCode.Space) && withAnimal == true && rayFinished == true)
         {
             _releaseAnimal.ReleasePlayerAnimal();
@@ -115,6 +147,7 @@ public class Player : MonoBehaviour
             if (animalWithMe == "Chicken")
                 playerAnimations[0].AttackAnimationStop_Chicken();
         }
+#endif
     }
 
     private void PlayerMovement()
@@ -122,9 +155,9 @@ public class Player : MonoBehaviour
         if (playerCanMove == true)
         {
             rb.velocity = Vector2.zero;
-            float horizontalMovement = Input.GetAxis("Horizontal");
-            float verticalmovement = Input.GetAxis("Vertical");
-            Vector2 movement = new Vector2(horizontalMovement, verticalmovement);
+            horizontalMovement = CrossPlatformInputManager.GetAxis("Horizontal");
+            verticalMovement = CrossPlatformInputManager.GetAxis("Vertical");
+            Vector2 movement = new Vector2(horizontalMovement, verticalMovement);
             rb.MovePosition(rb.position + movement * _playerSpeed * Time.deltaTime);
         }
         if (playerCanMove != true)
@@ -145,7 +178,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (isMoving != true && Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+        if (horizontalMovement > 0 || verticalMovement > 0)
         {
             isMoving = true;
         }
@@ -233,6 +266,7 @@ public class Player : MonoBehaviour
             {
                 _animator.SetBool("isMovingLeft", true);
                 _animator.SetBool("isMovingRight", false);
+                _animator.SetBool("isMovingDown", false);
                 playerDirection = "left";
             }
             else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
@@ -240,7 +274,6 @@ public class Player : MonoBehaviour
                 _animator.SetBool("isMovingLeft", false);
                 _animator.SetBool("isMovingRight", false);
                 _animator.SetBool("isMovingDown", false);
-                playerDirection = "none";
             }
         }
         else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
@@ -248,7 +281,6 @@ public class Player : MonoBehaviour
             _animator.SetBool("isMovingLeft", false);
             _animator.SetBool("isMovingRight", false);
             _animator.SetBool("isMovingDown", false);
-            playerDirection = "none";
         }
         else if (Input.GetKey(KeyCode.S) && playerCanMove == true)
         {
@@ -294,6 +326,78 @@ public class Player : MonoBehaviour
                 Dash();
             }
             else if (Input.GetKeyDown(KeyCode.D) || playerDirection == "right" && playerCanMove == true)
+                _animator.SetBool("isDashing", true);
+            Dash();
+        }
+    }
+    private void AndroidAnimationsControl()
+    {
+        if (animalWithMe != "Cow")
+        {
+            if (horizontalMovement > 0 && playerCanMove == true)
+            {
+                _animator.SetBool("isMovingRight", true);
+                _animator.SetBool("isMovingLeft", false);
+                _animator.SetBool("isMovingDown", false);
+                playerDirection = "right";
+            }
+            else if (horizontalMovement < -0f && playerCanMove == true)
+            {
+                _animator.SetBool("isMovingLeft", true);
+                _animator.SetBool("isMovingRight", false);
+                playerDirection = "left";
+            }
+            else if (horizontalMovement == 0 && playerCanMove == true)
+            {
+                _animator.SetBool("isMovingLeft", false);
+                _animator.SetBool("isMovingRight", false);
+            }
+        }
+
+        else if (playerCanMove == true && isMoving == false)
+        {
+            _animator.SetBool("isMovingLeft", false);
+            _animator.SetBool("isMovingRight", false);
+            _animator.SetBool("isMovingDown", false);
+        }
+
+        else if (verticalMovement < -0.5f && playerCanMove == true)
+        {
+            _animator.SetBool("isMovingDown", true);
+            playerDirection = "down";
+        }
+        else if (verticalMovement > 0)
+        {
+            _animator.SetBool("isMovingDown", false);
+        }
+        else if (horizontalMovement > 0 && playerCanMove == true)
+        {
+            _animator.SetBool("isMovingRight", true);
+            _animator.SetBool("isMovingLeft", false);
+            playerDirection = "downRight";
+            playerDirection = "right";
+        }
+        else if (horizontalMovement < 0f && playerCanMove == true)
+        {
+            _animator.SetBool("isMovingLeft", true);
+            _animator.SetBool("isMovingRight", false);
+            playerDirection = "downLeft";
+            playerDirection = "left";
+        }
+
+
+
+        //bull attack
+
+        if (CrossPlatformInputManager.GetButtonDown("XButton") && animalWithMe == "Bull" && playerCanMove == true)
+        {
+            playerAnimations[1].AttackAnimationPlay_Bull();
+            if (playerDirection == "left" && playerCanMove == true)
+            {
+                _animator.SetBool("isDashingLeft", true);
+                Dash();
+            }
+            else if (playerDirection == "right" && playerCanMove == true)
                 _animator.SetBool("isDashing", true);
             Dash();
         }

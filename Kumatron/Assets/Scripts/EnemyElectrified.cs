@@ -9,8 +9,10 @@ public class EnemyElectrified : MonoBehaviour
     [SerializeField]
     private AudioClip[] _electrifiedSounds;
     private AudioSource _audioSource;
+    private Enemy _enemy;
     void Start()
     {
+        _enemy = GetComponent<Enemy>();
         _audioSource = GetComponent<AudioSource>();
         _enemyAnimator = GetComponent<Animator>();
     }
@@ -23,6 +25,7 @@ public class EnemyElectrified : MonoBehaviour
     public void stopElectrified()
     {
         _enemyAnimator.SetBool("isElectrified", false);
+        _enemy.enemyHP--;
         electrified = false;
     }
     private void OnParticleCollision(GameObject other)

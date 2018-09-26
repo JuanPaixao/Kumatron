@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class AbduptionRange : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class AbduptionRange : MonoBehaviour
     public string otherObject;
     public bool canAbduct;
     private UIManager _uIManager;
+    private RaycastHit2D _hit;
+    [SerializeField]
+    private LayerMask _layer;
+    [SerializeField]
+    private float _rangeAbudction;
+
 
     void Start()
     {
@@ -27,36 +34,50 @@ public class AbduptionRange : MonoBehaviour
         {
             canAbduct = false;
         }
-        _uIManager.UpdateRayCheck(canAbduct);
-    }
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (otherObject != null)
+        else if (_hit.collider == null)
         {
-            if (other.gameObject.CompareTag("Animal") && _player.withAnimal != true)
+            canAbduct = false;
+        }
+        _hit = Physics2D.Raycast(transform.position, Vector2.down, _rangeAbudction, _layer);
+        {
+            if (_hit.collider != null)
             {
-                AnimalScript animal = other.GetComponent<AnimalScript>();
-                if (animal != null && animal.caged != true)
+                Debug.Log(_hit.collider.name);
                 {
-                    canAbduct = true;
-                    if (Input.GetKey(KeyCode.Space) && canAbduct == true)
+                    if (_hit.collider != null)
                     {
-                        otherObject = other.gameObject.name;
-                        _player.TurnRayOn(other.gameObject.name);
+                        if (_hit.collider.name == "Bull" || _hit.collider.name == "Cow" || _hit.collider.name == "Chicken")
+                        {
+                            AnimalScript animal = _hit.collider.GetComponent<AnimalScript>();
+                            if (animal.caged != true)
+                            {
+                                canAbduct = true;
+#if UNITY_ANDROID
+                                if (CrossPlatformInputManager.GetButtonDown("RayButton") && canAbduct == true)
+                                {
+                                    Debug.Log("Etapa 2");
+                                    otherObject = _hit.collider.name;
+                                    _player.TurnRayOn(_hit.collider.name);
+                                }
+#else
+                                if (Input.GetKey(KeyCode.Space) && canAbduct == true)
+                                {
+                                    Debug.Log("Etapa 2");
+                                    otherObject = _hit.collider.name;
+                                    _player.TurnRayOn(_hit.collider.name);
+                                }
+#endif
+                            }
+                        }
                     }
                 }
+
             }
         }
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (otherObject != null)
-        {
-            if (other.gameObject.CompareTag("Animal") && _player.withAnimal != true)
-            {
-                canAbduct = false;
-                _uIManager.UpdateRayCheck(canAbduct);
-            }
-        }
+
+
+        _uIManager.UpdateRayCheck(canAbduct);
+
+
     }
 }
