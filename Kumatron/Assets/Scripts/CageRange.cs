@@ -108,16 +108,17 @@ public class CageRange : MonoBehaviour
     }
     private void CheckCollisions()
     {
-        _leftHit = Physics2D.Raycast(_enemy.LeftDetection.position, Vector2.zero, 0, ~_layerMask);
-        _rightHit = Physics2D.Raycast(_enemy.RightDetection.position, Vector2.zero, 0, ~_layerMask);
+        _leftHit = Physics2D.Raycast(_enemy.LeftDetection.position, Vector2.zero, 1, ~_layerMask);
+        _rightHit = Physics2D.Raycast(_enemy.RightDetection.position, Vector2.zero, 1, ~_layerMask);
         if (_withAnimal == true)
         {
-            _downLeftHit = Physics2D.Raycast(downLeftHitCollider.position, Vector2.zero, 0, ~_layerMask);
-            _downRightHit = Physics2D.Raycast(downRightHitCollider.position, Vector2.zero, 0, ~_layerMask);
+            _downLeftHit = Physics2D.Raycast(downLeftHitCollider.position, Vector2.right, 1, ~_layerMask);
+            _downRightHit = Physics2D.Raycast(downRightHitCollider.position, Vector2.left, 1, ~_layerMask);
         }
         if (_leftHit.collider == true || _rightHit.collider == true || _downRightHit.collider == true || _downLeftHit.collider == true && _withAnimal == true)
         {
-            _rb.AddForce(Vector2.up * 1500);
+            _rb.AddForce(Vector2.up * 500);
+            Debug.Log("To dando hit");
         }
     }
     private IEnumerator CircleEnemyCoroutine()

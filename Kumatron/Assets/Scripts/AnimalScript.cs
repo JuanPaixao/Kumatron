@@ -56,6 +56,7 @@ public class AnimalScript : MonoBehaviour
             CheckGrounded();
             Walk();
             checkTime();
+            _rb.mass = 1;
         }
         else
         {
@@ -71,6 +72,7 @@ public class AnimalScript : MonoBehaviour
         if (other.CompareTag("Cage"))
         {
             caged = true;
+            _rb.mass = 0;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -81,7 +83,7 @@ public class AnimalScript : MonoBehaviour
         }
         if (other.CompareTag("Exit") && caged == true)
         {
-            Destroy(gameObject,1.5f);
+            Destroy(gameObject, 1.5f);
         }
     }
     private void Walk()

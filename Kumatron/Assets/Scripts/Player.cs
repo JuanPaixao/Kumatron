@@ -87,10 +87,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (playerDirection != "none")
-        {
-            PlayerMovement();
-        }
+        PlayerMovement();
     }
     private void PlayerAttack()
     {
@@ -354,38 +351,34 @@ public class Player : MonoBehaviour
             }
         }
 
+
         else if (playerCanMove == true && isMoving == false)
         {
             _animator.SetBool("isMovingLeft", false);
             _animator.SetBool("isMovingRight", false);
             _animator.SetBool("isMovingDown", false);
         }
-
-        else if (verticalMovement < -0.5f && playerCanMove == true)
+        if (verticalMovement > -0.6)
+        {
+            _animator.SetBool("isMovingDown", false);
+        }
+        else if (verticalMovement < -0.6f && playerCanMove == true)
         {
             _animator.SetBool("isMovingDown", true);
             playerDirection = "down";
         }
-        else if (verticalMovement > 0)
-        {
-            _animator.SetBool("isMovingDown", false);
-        }
-        else if (horizontalMovement > 0 && playerCanMove == true)
+        if (horizontalMovement > 0 && playerCanMove == true)
         {
             _animator.SetBool("isMovingRight", true);
             _animator.SetBool("isMovingLeft", false);
-            playerDirection = "downRight";
             playerDirection = "right";
         }
         else if (horizontalMovement < 0f && playerCanMove == true)
         {
             _animator.SetBool("isMovingLeft", true);
             _animator.SetBool("isMovingRight", false);
-            playerDirection = "downLeft";
             playerDirection = "left";
         }
-
-
 
         //bull attack
 

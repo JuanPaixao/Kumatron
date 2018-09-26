@@ -60,6 +60,10 @@ public class GameManager : MonoBehaviour
                 cowNumber = _cows.Length;
             }
         }
+        if (cowNumber <= 0 && chickenNumber <= 0 && bullNumber <= 0) // add variable to know if my player has an animal, in this case it will not be true either
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }
 
