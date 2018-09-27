@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     public bool isDashing, isMoving, isDefeated;
     public int playerHP;
     [SerializeField]
-    private GameObject _explosion;
+    private GameObject _explosion, _menuExplosion;
     [SerializeField]
     private AudioClip _damagePlayer, _dashPlayer;
     private UIManager _uiManager;
@@ -53,6 +53,10 @@ public class Player : MonoBehaviour
 
 #if UNITY_ANDROID
         AndroidAnimationsControl();
+        if (CrossPlatformInputManager.GetButtonDown("PauseButton"))
+        {
+            _gameManager.PauseGame();
+        }
 #else
         MovementAnimationsControl();
 #endif
@@ -201,6 +205,26 @@ public class Player : MonoBehaviour
             SquareEnemy squareEnemy = other.gameObject.GetComponent<SquareEnemy>();
             if (squareEnemy != null && squareEnemy.enemyDashing == true && playerHP > 0)
             {
+                if (withAnimal == true && rayFinished == true)
+                {
+                    if (other.gameObject.transform.position.x >= this.gameObject.transform.position.x && withAnimal == true && rayFinished == true)
+                    {
+                        _releaseAnimal.ReleasePlayerAnimal();
+                        playerCanMove = false;
+                        Instantiate(_explosion, this.transform.position, Quaternion.identity);
+                        rb.AddForce(Vector2.left * 22, ForceMode2D.Impulse);
+                        DamagePlayerSound();
+                    }
+                    else if (other.gameObject.transform.position.x < this.gameObject.transform.position.x && withAnimal == true && rayFinished == true)
+                    {
+                        _releaseAnimal.ReleasePlayerAnimal();
+                        playerCanMove = false;
+                        Instantiate(_explosion, this.transform.position, Quaternion.identity);
+                        rb.AddForce(Vector2.right * 22, ForceMode2D.Impulse);
+                        DamagePlayerSound();
+                    }
+                }
+
                 if (other.gameObject.transform.position.x >= this.gameObject.transform.position.x)
                 {
                     playerHP--;
@@ -329,7 +353,7 @@ public class Player : MonoBehaviour
     }
     private void AndroidAnimationsControl()
     {
-        if (animalWithMe != "Cow")
+        if (withAnimal == false || animalWithMe != "Cow")
         {
             if (horizontalMovement > 0 && playerCanMove == true)
             {
@@ -338,13 +362,13 @@ public class Player : MonoBehaviour
                 _animator.SetBool("isMovingDown", false);
                 playerDirection = "right";
             }
-            else if (horizontalMovement < -0f && playerCanMove == true)
+            if (horizontalMovement < -0f && playerCanMove == true)
             {
                 _animator.SetBool("isMovingLeft", true);
                 _animator.SetBool("isMovingRight", false);
                 playerDirection = "left";
             }
-            else if (horizontalMovement == 0 && playerCanMove == true)
+            if (horizontalMovement == 0 && playerCanMove == true)
             {
                 _animator.SetBool("isMovingLeft", false);
                 _animator.SetBool("isMovingRight", false);
@@ -424,7 +448,7 @@ public class Player : MonoBehaviour
         if (playerHP <= 0)
         {
             isDefeated = true;
-            Instantiate(_explosion, this.transform.position, Quaternion.identity);
+            Instantiate(_menuExplosion, this.transform.position, Quaternion.identity);
             Destroy(this.gameObject, 0.25f);
         }
     }
@@ -468,13 +492,21 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         TriangleShoot triangleShoot;
-        if (other.gameObject.CompareTag("Enemy_Shoot") && playerHP > 0)
+        if (other.gameObject.CompareTag("Enemy_Shoot") && withAnimal == true && rayFinished == true)
+        {
+            triangleShoot = other.gameObject.GetComponent<TriangleShoot>();
+            triangleShoot.DestroyingShootAnimation();
+            _releaseAnimal.ReleasePlayerAnimal();
+            DamagePlayerSound();
+        }
+        else if (other.gameObject.CompareTag("Enemy_Shoot") && playerHP > 0 && withAnimal == false)
         {
             triangleShoot = other.gameObject.GetComponent<TriangleShoot>();
             triangleShoot.DestroyingShootAnimation();
             playerHP--;
             DamagePlayerSound();
         }
+
     }
     private void DamagePlayerSound()
     {

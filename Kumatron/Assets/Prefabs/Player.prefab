@@ -187,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795575782663494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.839921, y: -1.5051008, z: 0}
+  m_LocalPosition: {x: -7.91, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4329326300245266}
@@ -507,6 +507,8 @@ MonoBehaviour:
   _playerSpeed: 4
   _auxSpeed: 0
   _cowSpeed: 0
+  horizontalMovement: 0
+  verticalMovement: 0
   withAnimal: 0
   rayFinished: 1
   _kumatronRay: {fileID: 0}
@@ -528,8 +530,10 @@ MonoBehaviour:
   isDashing: 0
   isMoving: 0
   isDefeated: 0
-  playerHP: 4
-  _explosion: {fileID: 1731576580359776, guid: dba92509bbf63c84f9a2116c73b1cc79, type: 2}
+  playerHP: 3
+  _explosion: {fileID: 1346925560943860, guid: 6df17b1cc561a2b4883a7e29528d41b2, type: 2}
+  _menuExplosion: {fileID: 1731576580359776, guid: dba92509bbf63c84f9a2116c73b1cc79,
+    type: 2}
   _damagePlayer: {fileID: 8300000, guid: 0bd79c7d481b6aa4da8bd124be1148b4, type: 3}
   _dashPlayer: {fileID: 8300000, guid: 6831e9b340df88d48b3f4bdb0b85aee3, type: 3}
 --- !u!114 &114766915202750992

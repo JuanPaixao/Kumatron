@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     private GameObject[] _factories, _chickens, _bulls, _cows;
     public int factoryHP, chickenNumber, bullNumber, cowNumber;
+    public bool pause;
     void Start()
     {
         _factories = GameObject.FindGameObjectsWithTag("Factory");
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
                 factoryHP++;
             }
         }
+        Time.timeScale = 1;
+        pause = false;
     }
     public void LoadGame()
     {
@@ -28,6 +31,18 @@ public class GameManager : MonoBehaviour
     public void LoadMenu()
     {
         SceneManager.LoadScene("Menu");
+    }
+    public void PauseGame()
+    {
+        pause = !pause;
+        if (pause == true)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
     public void FactoryDestroyed()
     {
@@ -59,10 +74,6 @@ public class GameManager : MonoBehaviour
             {
                 cowNumber = _cows.Length;
             }
-        }
-        if (cowNumber <= 0 && chickenNumber <= 0 && bullNumber <= 0) // add variable to know if my player has an animal, in this case it will not be true either
-        {
-            SceneManager.LoadScene("Menu");
         }
     }
 }
