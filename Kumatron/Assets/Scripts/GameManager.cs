@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
     private GameObject[] _factories, _chickens, _bulls, _cows;
     public int factoryHP, chickenNumber, bullNumber, cowNumber;
     public bool pause;
+    private UIManager _uiManager;
     void Start()
     {
         _factories = GameObject.FindGameObjectsWithTag("Factory");
-
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
         if (_factories != null)
         {
             foreach (GameObject _factory in _factories)
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
         }
         Time.timeScale = 1;
         pause = false;
+        AudioListener.volume = 1;
     }
     public void LoadGame()
     {
@@ -32,17 +34,23 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+    public void RestartLevel(string level)
+    {
+        SceneManager.LoadScene(level);
+    }
     public void PauseGame()
     {
-        pause = !pause;
-        if (pause == true)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
+        pause = true;
+        Time.timeScale = 0;
+        _uiManager.pauseMenu.gameObject.SetActive(true);
+        AudioListener.volume = 0.3f;
+    }
+    public void ResumeGame()
+    {
+        pause = false;
+        Time.timeScale = 1;
+        _uiManager.pauseMenu.gameObject.SetActive(false);
+        AudioListener.volume = 1;
     }
     public void FactoryDestroyed()
     {

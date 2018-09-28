@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDashing: 0
-  _dashSpeed: 1050
+  _dashSpeed: 1100
   _speed: 4
   _electrified: 0
 --- !u!114 &114804598031121234

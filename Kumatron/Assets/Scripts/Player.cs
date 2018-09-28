@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
         PlayerAttack();
 
 #if UNITY_ANDROID
+
         AndroidAnimationsControl();
         if (CrossPlatformInputManager.GetButtonDown("PauseButton"))
         {

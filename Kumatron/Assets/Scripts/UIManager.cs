@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     private Sprite[] _animalsFace;
     [SerializeField]
     private Text[] _animalsCount;
+    public Image pauseMenu;
     void Start()
     {
         _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -28,7 +29,8 @@ public class UIManager : MonoBehaviour
         _animalsCount[1].text = "" + _gameManager.bullNumber;
         _animalsCount[2].text = "" + _gameManager.cowNumber;
     }
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         LookHowMuchAnimals();
     }
     public void UpdateColor(int playerHP)
