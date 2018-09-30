@@ -25,7 +25,7 @@ public class AbduptionRange : MonoBehaviour
     {
         if (_player != null)
         {
-            this.transform.position = new Vector2(_player.transform.position.x, _player.transform.position.y - 2.06f);
+            this.transform.position = new Vector2(_player.transform.position.x, _player.transform.position.y - 1.10f);
         }
     }
     void Update()
