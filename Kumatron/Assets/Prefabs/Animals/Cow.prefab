@@ -11,6 +11,21 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1408896046828044}
   m_IsPrefabAsset: 1
+--- !u!1 &1037811886167168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4606416696975946}
+  m_Layer: 9
+  m_Name: Middle
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1059252907590010
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +162,19 @@ Transform:
   m_Father: {fileID: 4652203737263718}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4606416696975946
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1037811886167168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4652203737263718}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4652203737263718
 Transform:
   m_ObjectHideFlags: 1
@@ -154,7 +182,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408896046828044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.94, y: -1.96, z: 10}
+  m_LocalPosition: {x: 15.04, y: -2.12, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4145270980299462}
@@ -162,6 +190,7 @@ Transform:
   - {fileID: 4966983385991838}
   - {fileID: 4308915448323108}
   - {fileID: 4471232843029620}
+  - {fileID: 4606416696975946}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -372,10 +401,15 @@ MonoBehaviour:
   hitDetectionUpLevel: {fileID: 4145270980299462}
   hitDetectionDownLevel: {fileID: 4966983385991838}
   hitHeightCheckLevel: {fileID: 4308915448323108}
+  middle: {fileID: 4606416696975946}
   _circleEnemies: []
   _isWalking: 0
   caged: 0
   chased: 0
+  canBeCaptured: 0
+  canBeCapturedCondition:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!212 &212796249623649454
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -90,7 +90,7 @@ public class CageRange : MonoBehaviour
                 if (currentDistance < distance)
                 {
                     _allAnimals = _animalTarget.GetComponent<AnimalScript>();
-                    if (_allAnimals.caged != true)
+                    if (_allAnimals.caged != true && _allAnimals.canBeCaptured)
                     {
                         _allAnimals.chased = true;
                         closetAnimal = _animalTarget;
@@ -112,8 +112,8 @@ public class CageRange : MonoBehaviour
         _rightHit = Physics2D.Raycast(_enemy.RightDetection.position, Vector2.zero, 0.75f, ~_layerMask);
         if (_withAnimal == true)
         {
-            _downLeftHit = Physics2D.Raycast(downLeftHitCollider.position, Vector2.right, 0.75f, ~_layerMask);
-            _downRightHit = Physics2D.Raycast(downRightHitCollider.position, Vector2.left, 0.75f, ~_layerMask);
+            _downLeftHit = Physics2D.Raycast(downLeftHitCollider.position, Vector2.right, 1.2f, ~_layerMask);
+            _downRightHit = Physics2D.Raycast(downRightHitCollider.position, Vector2.left, 1.2f, ~_layerMask);
         }
         if (_leftHit.collider == true || _rightHit.collider == true || _downRightHit.collider == true || _downLeftHit.collider == true && _withAnimal == true)
         {
@@ -157,6 +157,16 @@ public class CageRange : MonoBehaviour
     {
         if (other.CompareTag("Exit") && _withAnimal == true)
         {
+            if (_animalTargets != null)
+            {
+                foreach (GameObject _animalTarget in _animalTargets)
+                {
+                    if (!_allAnimals.caged && _allAnimals.chased)
+                    {
+                        _allAnimals.chased = false;
+                    }
+                }
+            }
             Destroy(gameObject, 2f);
         }
     }

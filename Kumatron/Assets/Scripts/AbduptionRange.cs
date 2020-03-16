@@ -42,7 +42,6 @@ public class AbduptionRange : MonoBehaviour
         {
             if (_hit.collider != null)
             {
-                Debug.Log(_hit.collider.name);
                 {
                     if (_hit.collider != null)
                     {
@@ -62,7 +61,6 @@ public class AbduptionRange : MonoBehaviour
 #else
                                 if (Input.GetKey(KeyCode.Space) && canAbduct == true)
                                 {
-                                    Debug.Log("Etapa 2");
                                     otherObject = _hit.collider.name;
                                     _player.TurnRayOn(_hit.collider.name);
                                 }

@@ -14,9 +14,10 @@ public class AnimalScript : MonoBehaviour
     public Transform hitDetectionUpLevel;
     public Transform hitDetectionDownLevel;
     public Transform hitHeightCheckLevel;
+    public Transform middle;
     private LayerMask _layerMask = 1 << 10;
     [SerializeField]
-    private RaycastHit2D _hit, _hitUp, _hitDown, _hitCheckHeight;
+    private RaycastHit2D _hit, _hitUp, _hitDown, _hitCheckHeight, _hitLeft, _hitRight;
     private ChickenAnimationControl _chickenAnimation;
     private BullAnimationControl _bullAnimation;
     private CowAnimationControl _cowAnimation;
@@ -27,6 +28,8 @@ public class AnimalScript : MonoBehaviour
     private bool _isWalking;
     public bool caged;
     public bool chased;
+    public bool canBeCaptured;
+    public LayerMask canBeCapturedCondition;
 
     void Start()
     {
@@ -137,6 +140,24 @@ public class AnimalScript : MonoBehaviour
         _hitCheckHeight = Physics2D.Raycast(hitHeightCheckLevel.position, Vector2.zero, _animalSpeed, ~_layerMask);
         //down
         _hitDown = Physics2D.Raycast(hitDetectionDownLevel.position, Vector2.zero, _animalSpeed, ~_layerMask);
+
+        //left
+        _hitLeft = Physics2D.Raycast(middle.position, Vector2.left, 1.25f, canBeCapturedCondition);
+
+        //right
+        _hitRight = Physics2D.Raycast(middle.position, Vector2.right, 1.25f, canBeCapturedCondition);
+
+
+        if (_hitLeft.collider == true && _hitRight.collider == true)
+        {
+            canBeCaptured = false;
+        }
+        else
+        {
+            canBeCaptured = true;
+        }
+        Debug.DrawRay(middle.position, Vector2.right, Color.yellow, 0.1f);
+        Debug.DrawRay(middle.position, Vector2.left, Color.cyan, 0.1f);
 
 
         if (_hitCheckHeight.collider == true && _hitUp.collider != true && _hitCheckHeight.collider.tag != this.gameObject.tag)

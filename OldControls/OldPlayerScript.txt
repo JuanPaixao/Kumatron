@@ -1,0 +1,204 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+
+    [SerializeField]
+    private float _playerSpeed;
+    private Vector3 _targetPos;
+    public bool withAnimal = false;
+    public bool rayFinished = true;
+    [SerializeField]
+    private GameObject _kumatronRay;
+    private float _kumatronRayRange = 4.04f;
+    [SerializeField]
+    private ReleaseAnimal _releaseAnimal;
+    [SerializeField]
+    private GameObject _animalPos;
+    [SerializeField]
+    private string _animalTarget;
+    public string animalWithMe, playerDirection;
+    private RaycastHit2D _hit;
+    public bool playerCanMove = true;
+    public GameObject[] animalPowerUp;
+    [SerializeField]
+    private PlayerAnimations[] playerAnimations;
+    private float _shootFixedCooldown = 1.00f;
+    private float _eggCooldown = 0f;
+    private Rigidbody2D _rb;
+    [SerializeField]
+    private float _dashSpeed;
+    private float _dashTime;
+    [SerializeField]
+    private float _startDashTime;
+
+    void Start()
+    {
+        _targetPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        _rb = GetComponent<Rigidbody2D>();
+        _dashTime = _startDashTime;
+
+    }
+    void Update()
+    {
+        PlayerMovement();
+        PlayerAttack();
+
+    }
+    void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Dash();
+        }
+        else if (Input.GetKeyUp(KeyCode.D))
+        {
+            _rb.velocity = _rb.velocity = Vector2.zero;
+        }
+    }
+    private void PlayerMovement()
+    {
+        if (Input.GetMouseButton(0) && playerCanMove == true)
+        {
+            //check if has target
+            CheckObject();
+
+            if (_targetPos.x > this.transform.position.x)
+            {
+                playerDirection = "right";
+            }
+            else if (_targetPos.x < this.transform.position.x)
+            {
+                playerDirection = "left";
+            }
+        }
+        transform.position = Vector2.MoveTowards(transform.position, _targetPos, _playerSpeed * Time.deltaTime);
+
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Tilemap"))
+        {
+            _targetPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        }
+        GameObject otherObject = other.gameObject;
+        _rb.velocity = Vector2.zero;
+    }
+
+    private void CheckObject()
+    {
+
+        _hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        if (_hit.collider != null)
+        {
+            if (_hit.collider.CompareTag("Animal") && withAnimal == false)
+            {
+                _animalPos = _hit.collider.gameObject;
+                _animalTarget = _animalPos.gameObject.name;
+                _animalPos.transform.position = new Vector3(_animalPos.transform.position.x, _animalPos.transform.position.y, _animalPos.transform.position.z);
+                _targetPos = new Vector3(_animalPos.transform.position.x, _animalPos.transform.position.y + _kumatronRayRange, _animalPos.transform.position.z);
+                StartCoroutine(Lock());
+            }
+        }
+        else if (_hit.collider == null)
+        {
+            StopCoroutine(Lock());
+            _targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _targetPos.z = this.gameObject.transform.position.z;
+            _animalPos = null;
+            _animalTarget = null;
+            Debug.Log("nothing");
+        }
+    }
+
+    private void TurnRayOn()
+    {
+        if (this.transform.position.y == _targetPos.y && withAnimal == false && rayFinished == true)
+        {
+            _kumatronRay.SetActive(true);
+            withAnimal = true;
+            animalWithMe = _animalTarget;
+            playerCanMove = false;
+            rayFinished = false;
+
+            if (animalWithMe == "Chicken" || animalWithMe == "Chicken_Collision")
+            {
+                StartCoroutine(AnimalPowerUp(0));
+            }
+            if (animalWithMe == "Bull" || animalWithMe == "Bull_Collision")
+            {
+                StartCoroutine(AnimalPowerUp(1));
+            }
+            if (animalWithMe == "Cow" || animalWithMe == "Cow_Collision")
+            {
+                StartCoroutine(AnimalPowerUp(2));
+            }
+        }
+    }
+
+    private void PlayerAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && rayFinished == true)
+        {
+            _releaseAnimal.ReleasePlayerAnimal();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > _eggCooldown)
+        {
+            _releaseAnimal.Attack();
+            _eggCooldown = _shootFixedCooldown + _eggCooldown;
+            if (animalWithMe == "Chicken" || animalWithMe == "Chicken_Collision")
+                playerAnimations[0].AttackAnimationPlay_Chicken();
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            if (animalWithMe == "Chicken" || animalWithMe == "Chicken_Collision")
+                playerAnimations[0].AttackAnimationStop_Chicken();
+        }
+
+    }
+    public void Dash()
+    {
+        if (_dashTime <= 0)
+        {
+            playerDirection = "";
+        }
+        else
+        {
+            _dashTime -= Time.deltaTime;
+
+            if (playerDirection == "right")
+            {
+
+            }
+            else if (playerDirection == "left")
+            {
+
+            }
+        }
+
+        _targetPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+    }
+
+    private IEnumerator Lock()
+    {
+        while (_hit.collider != null && _hit.collider.CompareTag("Animal") && withAnimal == false)
+        {
+            _animalPos = _hit.collider.gameObject;
+            _animalTarget = _animalPos.gameObject.name;
+            _animalPos.transform.position = new Vector3(_animalPos.transform.position.x, _animalPos.transform.position.y, _animalPos.transform.position.z);
+            _targetPos = new Vector3(_animalPos.transform.position.x, _animalPos.transform.position.y + _kumatronRayRange, _animalPos.transform.position.z);
+            TurnRayOn();
+            yield return new WaitForSeconds(0.0075f);
+        }
+    }
+    private IEnumerator AnimalPowerUp(int animal)
+    {
+        yield return new WaitForSeconds(1);
+        animalPowerUp[animal].SetActive(true);
+    }
+}
+
