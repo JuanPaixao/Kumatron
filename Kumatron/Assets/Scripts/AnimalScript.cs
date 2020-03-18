@@ -29,6 +29,7 @@ public class AnimalScript : MonoBehaviour
     public bool caged;
     public bool chased;
     public bool canBeCaptured;
+    public bool beingAbducted;
     public LayerMask canBeCapturedCondition;
 
     void Start()
@@ -82,7 +83,16 @@ public class AnimalScript : MonoBehaviour
     {
         if (other.CompareTag("Ray"))
         {
-            StartCoroutine(AnimalAbducted());
+            if (!beingAbducted)
+            {
+                AnimalScript[] animals = FindObjectsOfType<AnimalScript>();
+                foreach (var animal in animals)
+                {
+                    Debug.Log(animal.name);
+                    animal.beingAbducted = true;
+                }
+                StartCoroutine(AnimalAbducted());
+            }
         }
         if (other.CompareTag("Exit") && caged == true)
         {
@@ -260,6 +270,7 @@ public class AnimalScript : MonoBehaviour
     }
     private IEnumerator AnimalAbducted()
     {
+        beingAbducted = true;
         while (1 < 2) //placeholder to gameover
         {
             _isWalking = false;
@@ -279,6 +290,11 @@ public class AnimalScript : MonoBehaviour
             }
 
             yield return new WaitForSeconds(1);
+            AnimalScript[] animals = FindObjectsOfType<AnimalScript>();
+            foreach (var animal in animals)
+            {
+               animal.beingAbducted = false;
+            }
             Destroy(this.gameObject);
         }
     }

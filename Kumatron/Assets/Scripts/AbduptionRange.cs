@@ -57,12 +57,14 @@ public class AbduptionRange : MonoBehaviour
                                     Debug.Log("Etapa 2");
                                     otherObject = _hit.collider.name;
                                     _player.TurnRayOn(_hit.collider.name);
+                                    canAbduct=false;
                                 }
 #else
                                 if (Input.GetKey(KeyCode.Space) && canAbduct == true)
                                 {
                                     otherObject = _hit.collider.name;
                                     _player.TurnRayOn(_hit.collider.name);
+                                    canAbduct = false;
                                 }
 #endif
                             }

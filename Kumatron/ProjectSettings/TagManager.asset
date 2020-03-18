@@ -21,6 +21,7 @@ TagManager:
   - Bull
   - Cow
   - Chicken
+  - CaptureArea
   layers:
   - Default
   - TransparentFX

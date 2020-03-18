@@ -44,8 +44,8 @@ public class SquareEnemy : MonoBehaviour
     {
         if (_electrified == false)
         {
-            if (Vector2.Distance(this.transform.position, _player.transform.position) < 7.5f && Vector2.Distance(this.transform.position,
-             _player.transform.position) > 7.0f)
+            if (Vector2.Distance(this.transform.position, _player.transform.position) <= 7.5f && Vector2.Distance(this.transform.position,
+             _player.transform.position) > 6.0f)
             {
                 _rb.MovePosition(Vector2.MoveTowards(this.transform.position, _player.transform.position, _speed * Time.deltaTime));
             }
@@ -58,13 +58,13 @@ public class SquareEnemy : MonoBehaviour
                 if (_player.transform.position.x > this.transform.position.x)
                 {
                     SetDashRight();
-                    _rb.AddForce(Vector2.right * _dashSpeed * Time.deltaTime);
+                    _rb.AddForce(Vector2.right * _dashSpeed * 0.8f * Time.deltaTime);
                     StartCoroutine(DashTimeOff());
                 }
                 else if (_player.transform.position.x < this.transform.position.x)
                 {
                     SetDashLeft();
-                    _rb.AddForce(Vector2.left * _dashSpeed * Time.deltaTime);
+                    _rb.AddForce(Vector2.left * _dashSpeed * 0.8f * Time.deltaTime);
                     StartCoroutine(DashTimeOff());
                 }
             }
@@ -72,13 +72,13 @@ public class SquareEnemy : MonoBehaviour
     }
     private IEnumerator DashTimeOff()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.75f);
         enemyDashing = false;
         SetIdle();
     }
     private IEnumerator DashTimeOn()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2.0f);
         enemyDashing = true;
     }
     private void SetIdle()

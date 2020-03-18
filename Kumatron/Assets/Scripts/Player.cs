@@ -107,8 +107,7 @@ public class Player : MonoBehaviour
         {
             _releaseAnimal.ReleasePlayerAnimal();
             _uiManager.CheckAnimal(animalWithMe);
-            //left right down
-  
+            //left right down  
         }
         if (CrossPlatformInputManager.GetButtonDown("XButton") && Time.time > _cooldown)
         {
@@ -160,7 +159,8 @@ public class Player : MonoBehaviour
             verticalMovement = CrossPlatformInputManager.GetAxisRaw("Vertical");
             Vector2 movement = new Vector2(horizontalMovement, verticalMovement);
             transform.Translate(movement.normalized * _playerSpeed * Time.deltaTime);
-            rb.velocity = movement.normalized * _playerSpeed * Time.deltaTime;
+            //rb.velocity = movement.normalized * _playerSpeed * Time.deltaTime;
+
 
             if (horizontalMovement > 0.01f)
             {
@@ -193,7 +193,6 @@ public class Player : MonoBehaviour
         else
         {
             animator.SetBool("withBull", false);
-            animator.SetFloat("dashState", 0);
         }
     }
 
@@ -256,6 +255,7 @@ public class Player : MonoBehaviour
         {
 
             _kumatronRay.SetActive(true);
+            _kumatronRay.GetComponent<Collider2D>().enabled = true;
             withAnimal = true;
             animalWithMe = animalName;
             playerCanMove = false;
@@ -342,14 +342,14 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         TriangleShoot triangleShoot;
-        if (other.gameObject.CompareTag("Enemy_Shoot") && withAnimal == true && rayFinished == true)
+        if (other.gameObject.CompareTag("Enemy_Shoot") && withAnimal == true && !isDashing)
         {
             triangleShoot = other.gameObject.GetComponent<TriangleShoot>();
             triangleShoot.DestroyingShootAnimation();
             _releaseAnimal.ReleasePlayerAnimal();
             DamagePlayerSound();
         }
-        else if (other.gameObject.CompareTag("Enemy_Shoot") && playerHP > 0 && withAnimal == false)
+        else if (other.gameObject.CompareTag("Enemy_Shoot") && playerHP > 0 && withAnimal == false && !isDashing)
         {
             triangleShoot = other.gameObject.GetComponent<TriangleShoot>();
             triangleShoot.DestroyingShootAnimation();

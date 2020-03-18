@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text[] _animalsCount;
     public Image pauseMenu;
+    public Text animalsText;
     void Start()
     {
         _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -73,5 +74,9 @@ public class UIManager : MonoBehaviour
         _animalsCount[0].text = "" + _gameManager.chickenNumber;
         _animalsCount[1].text = "" + _gameManager.bullNumber;
         _animalsCount[2].text = "" + _gameManager.cowNumber;
+    }
+    public void TextAnimalQuantity(int value)
+    {
+        animalsText.text = value.ToString();
     }
 }

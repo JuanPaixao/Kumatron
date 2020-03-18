@@ -8,8 +8,16 @@ public class AbductHandler : MonoBehaviour
     private Player _player;
     public void AbductingEventEnd()
     {
-        this.gameObject.SetActive(false);
+
         _player.playerCanMove = true;
         _player.rayFinished = true;
+        this.gameObject.SetActive(false);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Animal"))
+        {
+            this.GetComponent<Collider2D>().enabled = false;
+        }
     }
 }

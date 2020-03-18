@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int enemyHP;
-    private Player _player;
+    [SerializeField] private Player _player;
     [SerializeField]
     private GameObject _enemyExplosion;
     public Rigidbody2D rb;
@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        _player = FindObjectOfType<Player>();
     }
     void Update()
     {
