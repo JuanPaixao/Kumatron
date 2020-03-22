@@ -581,7 +581,7 @@ MonoBehaviour:
   _allAnimals: {fileID: 0}
   closetAnimal: {fileID: 0}
   hasTarget: 0
-  _speed: 3
+  _speed: 3.25
   _enemy: {fileID: 114225173059436938}
   downLeftHitCollider: {fileID: 4290057403916932}
   downRightHitCollider: {fileID: 4577646642137618}

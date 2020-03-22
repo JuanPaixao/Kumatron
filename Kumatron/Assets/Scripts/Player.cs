@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
         _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         _uiManager = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
         _auxSpeed = _playerSpeed;
-        _cowSpeed = _playerSpeed * 1.8f;
+        _cowSpeed = _playerSpeed * 1.35f;
         isDefeated = false;
         _dashTime = startDashTime;
 
@@ -342,14 +342,14 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         TriangleShoot triangleShoot;
-        if (other.gameObject.CompareTag("Enemy_Shoot") && withAnimal == true && !isDashing)
+        if (other.gameObject.CompareTag("Enemy_Shoot") && withAnimal == true && !isDashing && rayFinished)
         {
             triangleShoot = other.gameObject.GetComponent<TriangleShoot>();
             triangleShoot.DestroyingShootAnimation();
             _releaseAnimal.ReleasePlayerAnimal();
             DamagePlayerSound();
         }
-        else if (other.gameObject.CompareTag("Enemy_Shoot") && playerHP > 0 && withAnimal == false && !isDashing)
+        else if (other.gameObject.CompareTag("Enemy_Shoot") && playerHP > 0 && withAnimal == false && !isDashing && rayFinished)
         {
             triangleShoot = other.gameObject.GetComponent<TriangleShoot>();
             triangleShoot.DestroyingShootAnimation();

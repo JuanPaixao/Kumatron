@@ -15,16 +15,16 @@ public class CaptureArea : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Animal"))
         {
-            animalsInside++;
-            _uiManager.TextAnimalQuantity(animalsInside);
+            //   animalsInside++;
+            //    _uiManager.TextAnimalQuantity(animalsInside);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Animal"))
         {
-            animalsInside--;
-            _uiManager.TextAnimalQuantity(animalsInside);
+            //   animalsInside--;
+            // _uiManager.TextAnimalQuantity(animalsInside);
         }
     }
 }

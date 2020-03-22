@@ -96,7 +96,7 @@ public class AnimalScript : MonoBehaviour
         }
         if (other.CompareTag("Exit") && caged == true)
         {
-            Destroy(gameObject, 1.5f);
+            Destroy(gameObject,0.5f);
         }
     }
     private void Walk()
