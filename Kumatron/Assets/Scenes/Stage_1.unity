@@ -4043,6 +4043,7 @@ MonoBehaviour:
   distance: 0
   timeToSpawn: 15
   spawnActualTime: 0
+  exitPosition: {fileID: 1078686111}
 --- !u!1 &349734040
 GameObject:
   m_ObjectHideFlags: 0
@@ -11617,6 +11618,7 @@ MonoBehaviour:
   distance: 0
   timeToSpawn: 15
   spawnActualTime: 0
+  exitPosition: {fileID: 349734041}
 --- !u!4 &2089514028
 Transform:
   m_ObjectHideFlags: 0

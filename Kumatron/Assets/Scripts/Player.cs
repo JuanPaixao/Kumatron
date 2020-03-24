@@ -356,6 +356,11 @@ public class Player : MonoBehaviour
             playerHP--;
             DamagePlayerSound();
         }
+        if (other.gameObject.CompareTag("Enemy_Shoot") && isDashing)
+        {
+            triangleShoot = other.gameObject.GetComponent<TriangleShoot>();
+            triangleShoot.DestroyingShootAnimation();
+        }
 
     }
     private void DamagePlayerSound()

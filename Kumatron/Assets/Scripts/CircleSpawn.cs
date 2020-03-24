@@ -10,10 +10,11 @@ public class CircleSpawn : MonoBehaviour
     private Player _player;
     public float distanceToDetect, distance;
     public float timeToSpawn, spawnActualTime;
+    public Transform exitPosition;
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        spawnActualTime = timeToSpawn;
+        spawnActualTime = timeToSpawn / 2;
     }
     void Update()
     {
@@ -24,7 +25,8 @@ public class CircleSpawn : MonoBehaviour
             GameObject circle = GameObject.Find("CircleEnemy");
             if (circle == null && distance < distanceToDetect && spawnActualTime < 0)
             {
-                Instantiate(_circleEnemy, this.transform.position, Quaternion.identity);
+                GameObject enemy = Instantiate(_circleEnemy, this.transform.position, Quaternion.identity);
+                enemy.GetComponent<CageRange>().SetExitPosition(exitPosition);
                 spawnActualTime = timeToSpawn;
             }
         }

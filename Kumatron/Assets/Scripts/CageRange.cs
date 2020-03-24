@@ -21,7 +21,7 @@ public class CageRange : MonoBehaviour
     private Vector2 difference;
     [SerializeField]
     private float _speed;
-    private Transform _exitPosition;
+    [SerializeField]private Transform _exitPosition;
     [SerializeField]
     private Enemy _enemy;
     public Transform downLeftHitCollider;
@@ -36,7 +36,7 @@ public class CageRange : MonoBehaviour
         _enemyElectrified = GetComponent<EnemyElectrified>();
         _rb = GetComponent<Rigidbody2D>();
         StartCoroutine(CircleEnemyCoroutine());
-        _exitPosition = GameObject.FindGameObjectWithTag("Exit").transform;
+      //  _exitPosition = GameObject.FindGameObjectWithTag("Exit").transform;
     }
     void Update()
     {
@@ -169,5 +169,9 @@ public class CageRange : MonoBehaviour
             }
             Destroy(gameObject, 2f);
         }
+    }
+    public void SetExitPosition(Transform pos)
+    {
+        this._exitPosition = pos;
     }
 }
