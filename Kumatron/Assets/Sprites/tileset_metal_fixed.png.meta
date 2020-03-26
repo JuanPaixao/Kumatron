@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: fd9fab4f43609ee498d29df48785a8cf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2015813818932830638
+    second: tileset_metal_fixed_0
+  - first:
+      213: 6903100092686436722
+    second: tileset_metal_fixed_1
+  - first:
+      213: -2157778514776070246
+    second: tileset_metal_fixed_2
+  - first:
+      213: -2097618300509992151
+    second: tileset_metal_fixed_3
+  - first:
+      213: 3516796809142178121
+    second: tileset_metal_fixed_4
+  - first:
+      213: -7420650340613353370
+    second: tileset_metal_fixed_5
+  - first:
+      213: -2124437754820206818
+    second: tileset_metal_fixed_6
+  - first:
+      213: 5315500063000879263
+    second: tileset_metal_fixed_7
+  - first:
+      213: 4428820938196916805
+    second: tileset_metal_fixed_8
+  - first:
+      213: -276169346978492801
+    second: tileset_metal_fixed_9
+  - first:
+      213: -8696684880461426203
+    second: tileset_metal_fixed_10
+  - first:
+      213: 1125202700320719275
+    second: tileset_metal_fixed_11
+  - first:
+      213: 1431177113506146445
+    second: tileset_metal_fixed_12
+  - first:
+      213: 3783508526066653298
+    second: tileset_metal_fixed_13
+  - first:
+      213: 7255779128315743433
+    second: tileset_metal_fixed_14
+  - first:
+      213: 9103245882325768019
+    second: tileset_metal_fixed_15
+  - first:
+      213: 5333153587881281834
+    second: tileset_metal_fixed_16
+  - first:
+      213: 8352696219895703817
+    second: tileset_metal_fixed_17
+  - first:
+      213: 1895108527682289803
+    second: tileset_metal_fixed_18
+  - first:
+      213: 1145113235584819362
+    second: tileset_metal_fixed_19
+  - first:
+      213: -2413414298957011411
+    second: tileset_metal_fixed_20
+  - first:
+      213: -7626843643312263849
+    second: tileset_metal_fixed_21
+  - first:
+      213: -8986926658088274798
+    second: tileset_metal_fixed_22
+  - first:
+      213: 1659024527115427432
+    second: tileset_metal_fixed_23
+  - first:
+      213: 2675179226365587151
+    second: tileset_metal_fixed_24
+  - first:
+      213: -3926912530579146524
+    second: tileset_metal_fixed_25
+  - first:
+      213: -2335549854855969
+    second: tileset_metal_fixed_26
+  - first:
+      213: -7616526825847722734
+    second: tileset_metal_fixed_27
+  - first:
+      213: 923339450771636271
+    second: tileset_metal_fixed_28
+  - first:
+      213: -8264370474814967271
+    second: tileset_metal_fixed_29
+  - first:
+      213: 89608941430290352
+    second: tileset_metal_fixed_30
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tileset_metal_fixed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e34d750d105c3498c687d3ca7c69b9
+      internalID: 2015813818932830638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_metal_fixed_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4302e2da0d3efcc4db843b6aae665229
+      internalID: 6903100092686436722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_metal_fixed_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 592eb86cddedb0245af5211ed8dc7bd5
+      internalID: -2157778514776070246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_metal_fixed_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e6af28db142bc4d9d142e0168bb8e8
+      internalID: -2097618300509992151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_metal_fixed_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1384657b2749abb4ab982d785675dbad
+      internalID: 3516796809142178121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_metal_fixed_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ae65dc7d44a5f4bbab80de5818d234
+      internalID: -7420650340613353370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_metal_fixed_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f95067a791ac8499f68f7994f0a648
+      internalID: -2124437754820206818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_metal_fixed_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be756fd3e0c28d4180b70f3bb22bf9c
+      internalID: 5315500063000879263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
