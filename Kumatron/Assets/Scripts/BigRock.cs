@@ -9,10 +9,13 @@ public class BigRock : MonoBehaviour
     public LayerMask layerMask;
     public bool onCollisionWithPlayer;
     private Player _player;
+    private Animator _animator;
+    public float objectVelocity;
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _player = FindObjectOfType<Player>();
+        _animator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -25,6 +28,15 @@ public class BigRock : MonoBehaviour
         else
         {
             _rb.mass = 100;
+        }
+        objectVelocity = _rb.velocity.x;
+        if (Mathf.Abs(objectVelocity) > 0.1f)
+        {
+            _animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            _animator.SetBool("isMoving", false);
         }
     }
     void OnDrawGizmos()
